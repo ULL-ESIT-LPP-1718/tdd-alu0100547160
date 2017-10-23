@@ -1,0 +1,5 @@
+class Alimento 
+
+
+
+end 

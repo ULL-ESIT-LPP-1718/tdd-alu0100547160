@@ -1,5 +1,5 @@
-
 require "spec_helper"
+#equire "lib/tdd/Alimento.rb"
 
 RSpec.describe Alimento do
   
