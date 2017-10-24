@@ -51,6 +51,10 @@ RSpec.describe Alimento do
     it "Funciona el método  get_glúcidos" do
       expect(@alimento1.get_glucidos).to eq(0.0)
     end
+    
+    it "Funciona el método  get_grasas" do
+      expect(@alimento1.get_grasas).to eq(19.5)
+    end
   end 
     
   
