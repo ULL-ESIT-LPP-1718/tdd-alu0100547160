@@ -23,4 +23,11 @@ class Alimento
     def get_grasas
         @grasas
     end
+    
+    def to_s
+        s = ""
+        s += "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
+        
+        s
+    end 
 end 

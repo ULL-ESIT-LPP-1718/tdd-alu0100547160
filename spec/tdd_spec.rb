@@ -56,11 +56,12 @@ RSpec.describe Alimento do
       expect(@alimento1.get_grasas).to eq(19.5)
     end
     
-    it "Funciona el método  get_grasas" do
+    it "Funciona el método  to_s" do
       expect(@alimento1.to_s).to eq("Huevo frito        14.1      0.0      19.5")
     end
-    
-  end 
+  
+  end
+ 
     
   
 end
