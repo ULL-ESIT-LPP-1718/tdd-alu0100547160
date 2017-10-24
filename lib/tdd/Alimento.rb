@@ -1,10 +1,11 @@
 class Alimento 
-    attr :nombre, :proteinas, :glucidos
+    attr_accessor :nombre, :proteinas, :glucidos, :grasas
     
-    def initialize (nombre, proteinas, glucidos)
+    def initialize (nombre, proteinas, glucidos, grasas)
         @nombre = nombre 
         @proteinas = proteinas
         @glucidos = glucidos
+        @grasas = grasas
     end
 
 

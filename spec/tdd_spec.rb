@@ -4,8 +4,9 @@ require "spec_helper"
 RSpec.describe Alimento do
   
   before :each do
-    @alimento1 = Alimento.new("Huevo frito",14.1,0.0)
+     @alimento1 = Alimento.new("Huevo frito",14.1,0.0,19.5)
   end 
+  describe "1) Expectativas de la clase" do
     it "Se instancia bien el objeto @alimento" do
       expect(@alimento1).to be_an_instance_of(Alimento)
     end 
@@ -17,8 +18,9 @@ RSpec.describe Alimento do
     it "Does something useful" do
       expect(true).to eq(true)
     end
+  end 
   
-  describe "# Atributos de la clase Alimento" do
+  describe "2) Expectativas de los atributos de la clase Alimento" do
     
     it "Se almacena correctamente el atributo nombre" do
       expect(@alimento1.nombre).to eq('Huevo frito') 
@@ -33,8 +35,7 @@ RSpec.describe Alimento do
     end
     
     it "Se almacena correctamente el atributo grasas" do
-      @alimento1.grasas = [:'19.5']
-      @alimento1.grasas.should == [:'19.5']
+      expect(@alimento1.grasas).to eq(19.5)
     end
     
   end
