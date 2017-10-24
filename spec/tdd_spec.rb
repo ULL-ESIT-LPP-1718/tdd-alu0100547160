@@ -21,5 +21,9 @@ RSpec.describe Alimento do
       expect(@alimento1.nombre).to eq('Huevo frito') 
     end
     
+    it "Se almacena correctamente el atributo proteínas" do
+      expect(@alimento1.proteínas).to eq(14.1) 
+    end
+    
   end
 end
