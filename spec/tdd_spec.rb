@@ -61,7 +61,14 @@ RSpec.describe Alimento do
     end
   
   end
- 
+  describe "4) Expectaticvas para los tipos de atributos" do
+    it "El tipo del atributo nombre debe ser un String" do
+      expect(@alimento1.nombre).to be_a(String) 
+    end 
+    
+    
+  
+  end
     
   
 end
