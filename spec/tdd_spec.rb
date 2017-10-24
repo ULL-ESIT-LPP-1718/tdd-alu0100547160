@@ -25,5 +25,10 @@ RSpec.describe Alimento do
       expect(@alimento1.proteinas).to eq(14.1) 
     end
     
+    it "Se almacena correctamente el atributo glúcidos" do
+      expect(@alimento1.glucidos).to eq(0.0) 
+    end
+    
+    
   end
 end
