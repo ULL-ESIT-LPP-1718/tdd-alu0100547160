@@ -15,4 +15,8 @@ class Alimento
     def get_proteinas
         @proteinas
     end
+    
+    def get_glucidos
+        @glucidos
+    end
 end 
