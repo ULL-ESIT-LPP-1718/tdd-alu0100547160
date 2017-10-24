@@ -4,7 +4,7 @@ require "spec_helper"
 RSpec.describe Alimento do
   
   before :each do
-    @alimento1 = Alimento.new("Huevo frito")
+    @alimento1 = Alimento.new("Huevo frito",14.1)
   end 
   
     it "has a version number" do
@@ -22,7 +22,7 @@ RSpec.describe Alimento do
     end
     
     it "Se almacena correctamente el atributo proteínas" do
-      expect(@alimento1.proteínas).to eq(14.1) 
+      expect(@alimento1.proteinas).to eq(14.1) 
     end
     
   end

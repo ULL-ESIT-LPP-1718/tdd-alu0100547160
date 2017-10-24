@@ -1,8 +1,9 @@
 class Alimento 
-    attr :nombre
+    attr :nombre, :proteinas
     
-    def initialize (nombre)
+    def initialize (nombre, proteinas)
         @nombre = nombre 
+        @proteinas = proteinas
     end
 
 
