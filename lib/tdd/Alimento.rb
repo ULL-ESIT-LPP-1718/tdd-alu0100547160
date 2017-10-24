@@ -30,4 +30,9 @@ class Alimento
         
         s
     end 
+    
+    def get_valor_energetico
+        ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
+        ve
+    end 
 end 
