@@ -19,4 +19,8 @@ class Alimento
     def get_glucidos
         @glucidos
     end
+    
+    def get_grasas
+        @grasas
+    end
 end 
