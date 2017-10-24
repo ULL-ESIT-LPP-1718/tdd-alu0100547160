@@ -8,5 +8,7 @@ class Alimento
         @grasas = grasas
     end
 
-
+    def get_nombre
+        @nombre
+    end
 end 
