@@ -4,14 +4,17 @@ require "spec_helper"
 RSpec.describe Alimento do
   
   before :each do
-    @alimento1 = Alimento.new("Huevo frito",14.1)
+    @alimento1 = Alimento.new("Huevo frito",14.1,0.0)
   end 
-  
-    it "has a version number" do
+    it "Se instancia bien el objeto @alimento" do
+      expect(@alimento1).to be_an_instance_of(Alimento)
+    end 
+    
+    it "Has a version number" do
       expect(Tdd::VERSION).not_to be nil
     end
   
-    it "does something useful" do
+    it "Does something useful" do
       expect(true).to eq(true)
     end
   
