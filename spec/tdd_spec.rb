@@ -37,6 +37,16 @@ RSpec.describe Alimento do
     it "Se almacena correctamente el atributo grasas" do
       expect(@alimento1.grasas).to eq(19.5)
     end
+  
+  end 
+  describe "3) Expectativas para los métodos getter de los atributos" do 
+    it "Funciona el método  get_nombre " do
+           expect(@alimento1.get_nombre).to eq('Huevo frito')
+           
+        end
     
-  end
+    
+  end 
+    
+  
 end
