@@ -5,6 +5,8 @@ RSpec.describe Alimento do
   
   before :each do
      @alimento1 = Alimento.new("Huevo frito",14.1,0.0,19.5)
+     @alimento2 = Alimento.new("Leche vaca",3.3,4.8,3.2)
+     @alimento3 = Alimento.new("Yogurt",3.8,4.9,3.8)
   end 
   describe "1) Expectativas de la clase" do
     it "Se instancia bien el objeto @alimento" do
@@ -58,6 +60,10 @@ RSpec.describe Alimento do
     
     it "Funciona el método  to_s" do
       expect(@alimento1.to_s).to eq("Huevo frito        14.1      0.0      19.5")
+    end
+    
+    it "Funciona el método  get_valor_energetico" do
+      expect(@alimento1.get_valor_energetico).to eq(231.9)
     end
   
   end
