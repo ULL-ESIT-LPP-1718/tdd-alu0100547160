@@ -45,7 +45,7 @@ RSpec.describe Alimento do
     end
     
     it "Funciona el método  get_proteínas" do
-      expect(@alimento1.get_proteina).to eq(14.1)
+      expect(@alimento1.get_proteinas).to eq(14.1)
     end
     
   end 

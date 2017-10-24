@@ -11,4 +11,8 @@ class Alimento
     def get_nombre
         @nombre
     end
+    
+    def get_proteinas
+        @proteinas
+    end
 end 
