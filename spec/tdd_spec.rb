@@ -32,6 +32,10 @@ RSpec.describe Alimento do
       expect(@alimento1.glucidos).to eq(0.0) 
     end
     
+    it "Se almacena correctamente el atributo grasas" do
+      @alimento1.grasas = [:'19.5']
+      @alimento1.grasas.should == [:'19.5']
+    end
     
   end
 end
