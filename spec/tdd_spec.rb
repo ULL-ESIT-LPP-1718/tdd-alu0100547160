@@ -66,7 +66,17 @@ RSpec.describe Alimento do
       expect(@alimento1.nombre).to be_a(String) 
     end 
     
+    it "El tipo del atributo proteínas debe ser un Float" do
+      expect(@alimento1.proteinas).to be_a(Float) 
+    end
     
+    it "El tipo del atributo glúcidos debe ser un Float" do
+      expect(@alimento1.glucidos).to be_a(Float) 
+    end
+    
+    it "El tipo del atributo grasas debe ser un Float" do
+      expect(@alimento1.grasas).to be_a(Float) 
+    end
   
   end
     
