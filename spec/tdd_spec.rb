@@ -7,17 +7,18 @@ RSpec.describe Alimento do
     @alimento1 = Alimento.new("Huevo frito")
   end 
   
-  it "has a version number" do
-    expect(Tdd::VERSION).not_to be nil
-  end
-
-  it "does something useful" do
-    expect(true).to eq(true)
-  end
+    it "has a version number" do
+      expect(Tdd::VERSION).not_to be nil
+    end
   
-  describe "# Almacenamiento de Cantidad de Proteínas" do
-    it "Se almacena correctamente el atributo Proteínas" do
-      expect(@alimento1.nombre).to eq() 
+    it "does something useful" do
+      expect(true).to eq(true)
+    end
+  
+  describe "# Atributos de la clase Alimento" do
+    
+    it "Se almacena correctamente el atributo nombre" do
+      expect(@alimento1.nombre).to eq('Huevo frito') 
     end
     
   end
