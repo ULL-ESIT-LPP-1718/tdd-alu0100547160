@@ -41,10 +41,12 @@ RSpec.describe Alimento do
   end 
   describe "3) Expectativas para los métodos getter de los atributos" do 
     it "Funciona el método  get_nombre " do
-           expect(@alimento1.get_nombre).to eq('Huevo frito')
-           
-        end
+      expect(@alimento1.get_nombre).to eq('Huevo frito')
+    end
     
+    it "Funciona el método  get_proteínas" do
+      expect(@alimento1.get_proteina).to eq(14.1)
+    end
     
   end 
     
