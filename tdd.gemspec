@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lisseth Vergaray Del Aguila"]
   spec.email         = ["alu0100547160@ull.edu.es"]
 
-  spec.summary       = %q{Practica 6, Desarrollo por TDD}
+  spec.summary       = %q{Practica 7, Desarrollo por TDD,Jerarquia de clases  y herramienta Guard}
   spec.description   = %q{se va a utilizar la metodologíaa de desarrollo dirigido por pruebas (Test
 Driven Development - TDD) y la herramienta RSpec.}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100547160.git"

@@ -89,6 +89,16 @@ RSpec.describe Alimento do
   
 end
 
-RSpec.describe Alimento do
+
   
+RSpec.describe Lista do
+  it "Debe exitir un nodo con su valor, su siguiente y su previa " do
+    @nodo1 = Nodo.new()
+    expect(@nodo1.Next_).to be nil
+    expect(@nodo1.Prev_).not_to be nil
+  
+    expect(@nodo2.Next_).not_to be nil
+    expect(@nodo2.Prev_).to be nil
+  end
+
 end
