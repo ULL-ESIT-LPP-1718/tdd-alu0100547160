@@ -92,12 +92,26 @@ end
 
   
 RSpec.describe Lista do
-  context ") Los prev y next deben ser nulos" do
-    it "Debe exitir un nodo con su valor, su siguiente y su previo " do
-      @nodo1 = Nodo.new(1,nil,nil)
-      expect(@nodo1.next).to be nil
-      expect(@nodo1.prev).to be nil
+  describe "1) Nodo" do
+    context "*Los prev y next deben ser nulos" do
+      it "Debe exitir un nodo con su valor, su siguiente y su previo" do
+        @nodo1 = Nodo.new(1,nil,nil)
+        expect(@nodo1.next).to be nil
+        expect(@nodo1.prev).to be nil
+      end
     end
   end
-
+  
+  describe "2) Lista" do
+    context "*La lista debe estar inicializada" do
+      it "Debe existir una Lista con su cabeza y su cola" do 
+        @lista = Lista.new
+        
+        #expect(@lista.tam).to be nil
+        
+      end 
+      
+    end
+  end
+    
 end
