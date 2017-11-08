@@ -94,8 +94,9 @@ end
 RSpec.describe Lista do
 
     before :all do
-      @nodo1 = Nodo.new()
-      @lista = Lista.new(0,nil,nil)
+      @nodo1 = Nodo.new(5,nil,nil)
+      @nodo2 = Nodo.new(8,nil,nil)
+      @lista = Lista.new()
     end
     
     context "1) Nodo:" do
@@ -129,9 +130,15 @@ RSpec.describe Lista do
         expect(@lista.cola).to be nil
       end
       it "Se debe poder insertar un elemento en la lista" do
-        @lista.insertar()
+        @lista.insertar_delante(@nodo1)
+        @lista.insertar_detras(@nodo2)
+        
       end
+      @lista.to_s
     end
   
     
 end
+
+
+
