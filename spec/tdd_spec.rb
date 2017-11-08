@@ -105,7 +105,7 @@ RSpec.describe Lista do
   describe "2) Lista" do
     context "*La lista debe estar inicializada" do
       it "Debe existir una Lista con su cabeza y su cola" do 
-        @lista = Lista.new
+        @lista = Lista.new()
         
         #expect(@lista.tam).to be nil
         
