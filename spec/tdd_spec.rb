@@ -95,7 +95,7 @@ RSpec.describe Lista do
 
     before :all do
       @nodo1 = Nodo.new()
-      @lista = Lista.new(0)
+      @lista = Lista.new(0,nil,nil)
     end
     
     context "1) Nodo:" do
@@ -123,10 +123,13 @@ RSpec.describe Lista do
         expect(@lista.tam).to be_a(Integer)  
       end
       it "Debe exitir el atributo cabeza" do
-        expect(@lista.cabeza).not_to be nil
+        expect(@lista.cabeza).to be nil
       end
       it "Debe existir el atributo cola" do
         expect(@lista.cola).to be nil
+      end
+      it "Se debe poder insertar un elemento en la lista" do
+        @lista.insertar()
       end
     end
   
