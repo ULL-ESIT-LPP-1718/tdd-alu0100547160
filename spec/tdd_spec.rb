@@ -93,8 +93,9 @@ end
   
 RSpec.describe Lista do
 
-    before :each do
+    before :all do
       @nodo1 = Nodo.new()
+      @lista = Lista.new(0)
     end
     
     context "1) Nodo:" do
@@ -115,7 +116,12 @@ RSpec.describe Lista do
       it "Debe existir la clase Lista" do 
         expect(Lista).to be_a(Class)
       end 
-      it "Debe exitir el atributo tamaño"
+      it "Debe exitir el atributo tamaño" do
+        expect(@lista.tam).not_to be nil
+      end
+      it "El atributo tam debe ser un entero" do
+        expect(@lista.tam).to be_a(Integer)  
+      end
       
     end
   
