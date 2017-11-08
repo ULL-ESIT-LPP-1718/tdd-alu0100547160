@@ -122,7 +122,12 @@ RSpec.describe Lista do
       it "El atributo tam debe ser un entero" do
         expect(@lista.tam).to be_a(Integer)  
       end
-      
+      it "Debe exitir el atributo cabeza" do
+        expect(@lista.cabeza).not_to be nil
+      end
+      it "Debe existir el atributo cola" do
+        expect(@lista.cola).to be nil
+      end
     end
   
     
