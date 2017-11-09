@@ -132,7 +132,10 @@ RSpec.describe Lista do
       it "Se debe poder insertar un elemento en la lista" do
         @lista.insertar_delante(@nodo1)
         @lista.insertar_detras(@nodo2)
-        
+      end
+      it "Se debe poder extrar un elemento por delante y por detrás" do
+        @lista.extraer_delante()
+        @lista.extrar_detras()
       end
       @lista.to_s
     end
