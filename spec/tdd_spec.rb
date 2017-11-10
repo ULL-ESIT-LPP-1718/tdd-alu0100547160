@@ -138,7 +138,7 @@ end
 RSpec.describe Grupo_de_Alimento  do
     context "1) Herencia" do
       before :each do
-        @grupo1 = Grupo_de_Alimento.new()
+        @grupo1 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
       end    
           
       it "Un objeto grupo1 es una instancia de la clase Grupo_de_Alimento" do
@@ -163,7 +163,7 @@ RSpec.describe Grupo_de_Alimento  do
     
     context "2) Tipo" do 
       before :each do
-        @grupo1 = Grupo_de_Alimento.new()
+        @grupo1 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
       end    
       
       it "Un objeto grupo1 responde al método grupo" do
