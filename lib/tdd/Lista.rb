@@ -2,7 +2,7 @@
 Nodo = Struct.new(:value, :Next_, :prev)  
 
 class Lista 
-    
+    include Enumerable
     attr_accessor :tam, :cabeza, :cola
         def initialize()
             @tam = 0
@@ -11,12 +11,12 @@ class Lista
         end 
         #inserta por la cabeza y aumenta tamaño de lista 
         def insertar_delante(dato)
-            if (tam == 0) |
+            if (tam == 0) 
                 @cola = dato 
-                dato.Next_ = nil
+                dato[:Next_] = nil
             else  
                 @cabeza.prev = dato
-                dato.Next_ = @cabeza
+                dato[:Next_] = @cabeza
             end 
             
             @cabeza = dato  #|nil|cabeza/dato|nil
@@ -28,13 +28,13 @@ class Lista
         def insertar_detras(dato)
             if (@tam == 0)
                 @cabeza = dato
-                dato.prev = nil
+                dato.prev= nil
             else
-                @cola.Next_ = dato
-                dato.prev = @cola
+                @cola.prev= dato
+                dato.prev= @cola
             end
             @cola = dato 
-            dato.Next_ = nil
+            dato[:Next_] = nil
             @tam = @tam + 1 
         end
         #extraer un elemento por la cabeza 
@@ -43,7 +43,7 @@ class Lista
                puts "La Lista está vacía"
            else
                aux = @cabeza
-               (@cabeza[:Next_]).prev = nil
+              # (@cabeza[:Next_]).prev = nil
                @cabeza = @cabeza[:Next_]
                @tam = @tam - 1
                return aux[:value]
@@ -68,6 +68,15 @@ class Lista
                puts aux.value
                aux = aux.Next_
            end
+        end
+        
+        #Metodo de acceso a acada elemento, Comparable y Enumerable
+        def each
+            aux = @cabeza
+            while(aux != nil)
+                yield aux[:value]
+                aux= aux[:next]
+            end
         end
         
 end 
