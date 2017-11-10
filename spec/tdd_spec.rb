@@ -136,7 +136,7 @@ RSpec.describe Lista do
 end
 
 RSpec.describe Grupo_de_Alimento  do
-    context "1) herencia" do
+    context "1) Herencia" do
       before :each do
         @grupo1 = Grupo_de_Alimento.new()
       end    
@@ -144,7 +144,21 @@ RSpec.describe Grupo_de_Alimento  do
       it "Un objeto grupo1 es una instancia de la clase Grupo_de_Alimento" do
         expect(@grupo1).to be_an_instance_of(Grupo_de_Alimento) 
       end
-      
+      it "Un objeto grupo1 es una instancia de la clase Object" do
+        expect(@grupo1).not_to be_an_instance_of(Object) 
+      end
+      it "Un objeto grupo1 es una instancia de la clase BasicObject" do
+        expect(@grupo1).not_to be_an_instance_of(BasicObject)
+      end
+      it "Un grupo1 es un Grupo_de_Alimento" do
+        expect(@grupo1).to be_a_kind_of(Grupo_de_Alimento) 
+      end
+      it "Un grupo1 es un Object" do
+        expect(@grupo1).to be_a_kind_of(Object) 
+      end
+      it "Un grupo1 es un BasicObject" do
+        expect(@grupo1).to be_a_kind_of(BasicObject) 
+      end
   end
   
   
