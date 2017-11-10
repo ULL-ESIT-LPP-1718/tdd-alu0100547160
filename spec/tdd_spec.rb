@@ -169,7 +169,15 @@ RSpec.describe Grupo_de_Alimento  do
       it "Un objeto grupo1 responde al método grupo" do
          expect(@grupo1).to respond_to(:grupo) 
       end
-      
+      it "Un objeto grupo1 responde al método nombre por la herencia " do
+         expect(@grupo1).to respond_to(:nombre)
+      end
+      it "Un objeto grupo1 responde a los métodos proteinas y glúcidos  por la herencia " do
+         expect(@grupo1).to respond_to(:proteinas, :glucidos) 
+      end
+      it "un objeto grupo1 responde al método grasas" do
+         expect(@grupo1).to respond_to('get_grasas') 
+      end
     
     end 
 

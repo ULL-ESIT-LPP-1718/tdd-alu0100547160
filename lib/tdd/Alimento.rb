@@ -38,13 +38,21 @@ class Alimento
 end 
 
 class Grupo_de_Alimento < Alimento 
-     attr_reader :grupo
+    attr_reader :grupo
      
-     def initialize( )
+    def initialize( )
          super(0,0,0,0)             #encadenamiento (chaining)
          @grupo = grupo
-     end
+    end
+    
+    def to_s
+    s = "#{@grupo}"
+    s << super.to_s        #encadenamiento (chaining)
+    
+    end
    
+    
+            
     
   
 
