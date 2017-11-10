@@ -1,5 +1,7 @@
 require "spec_helper"
-#equire "lib/tdd/Alimento.rb"
+require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Alimento.rb"
+require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb"
+
 
 RSpec.describe Alimento do
   
@@ -135,7 +137,7 @@ RSpec.describe Lista do
     end
 end
 
-RSpec.describe Grupo_de_Alimento  do
+RSpec.describe Grupo_de_Alimento do
     context "1) Herencia" do
       before :each do
         @grupo1 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
@@ -178,11 +180,61 @@ RSpec.describe Grupo_de_Alimento  do
       it "un objeto grupo1 responde al método grasas" do
          expect(@grupo1).to respond_to('get_grasas') 
       end
-    
+      
     end 
+    
+    context "3) Listas de ALimentos por Grupo" do 
+      before :all do 
+        @listas = Lista.new()
+        #Huevos lácteos y helados 
+        @grupo11 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
+        @grupo12 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Leche vaca', 3.3, 4.8, 3.2)
+        @grupo13 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Yogurt', 3.8, 4.9, 3.8)
+        #Carnes y derivados
+        @grupo21 = Grupo_de_Alimento.new('Carnes y derivados', 'Cerdo', 21.5, 0.0, 6.3)
+        @grupo22 = Grupo_de_Alimento.new('Carnes y derivados', 'Ternera', 21.1, 0.0, 3.1)
+        @grupo23 = Grupo_de_Alimento.new('Carnes y derivados', 'Pollo', 20.6, 0.0, 5.6)
+        #Pescados y mariscos
+        @grupo31 = Grupo_de_Alimento.new('Pescados y mariscos', 'Bacalao', 17.7, 0.0, 0.4)
+        @grupo32 = Grupo_de_Alimento.new('Pescados y mariscos', 'Atún', 21.5, 0.0, 15.5)
+        @grupo33 = Grupo_de_Alimento.new('Pescados y mariscos', 'Salmón', 19.9, 0.0, 13.6)
+        #Alimentos grasos
+        @grupo41 = Grupo_de_Alimento.new('Alimentos grasos', 'Aceite de oliva', 0.0, 0.2, 99.6)
+        @grupo42 = Grupo_de_Alimento.new('Alimentos grasos', 'Mantequilla', 0.7, 0.0, 83.2)
+        @grupo43 = Grupo_de_Alimento.new('Alimentos grasos', 'Chocolate', 5.3, 47.0, 30.0)
+        #Alimentos ricos en carbohidratos
+        @grupo51 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Azúcar', 0.0, 99.8, 0.0)
+        @grupo52 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Arroz', 6.8, 77.7, 0.6)
+        @grupo53 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Lentejas', 23.5, 52.0, 1.4)
+        @grupo54 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Papas', 2.0, 15.4, 0.1)
+        #Verduras y Hortalizas
+        @grupo61 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Tomate', 1.0, 3.5, 0.2)
+        @grupo62 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Cebolla', 1.3, 5.8, 0.3)
+        @grupo63 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Calabaza', 1.1, 4.8, 0.1)
+        #Frutas
+        @grupo71 = Grupo_de_Alimento.new('Frutas', 'Manzana', 0.3, 12.4, 0.4)
+        @grupo72 = Grupo_de_Alimento.new('Frutas', 'Plátanos', 1.2, 21.4, 0.2)
+        @grupo73 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
+        
+        # @listas.insertar_detras(@grupo11)
+        # @listas.insertar_detras(@grupo12)
+        # @listas.insertar_detras(@grupo13)
+        # @listas.insertar_detras(@grupo21)
+        # @listas.insertar_detras(@grupo22)
+        # @listas.insertar_detras(@grupo23)
+        # @listas.insertar_detras(@grupo31)
+        # @listas.insertar_detras(@grupo32)
+        # @listas.insertar_detras(@grupo33)
+      end
+      
+      it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
+        puts @listas.to_s
+      end
+      
+      
+    end
 
   
 end
-
 
 
