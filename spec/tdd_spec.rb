@@ -104,7 +104,7 @@ RSpec.describe Lista do
         expect(Nodo).not_to be nil
       end
       it "Debe exitir el atributo next a nil " do
-        expect(@nodo1.next).to be nil
+        expect(@nodo1.Next_).to be nil
       end
       it "Debe existir el atributo prev a nill" do
         expect(@nodo1.prev).to be nil
@@ -133,11 +133,11 @@ RSpec.describe Lista do
         @lista.insertar_delante(@nodo1)
         @lista.insertar_detras(@nodo2)
       end
-      it "Se debe poder extrar un elemento por delante y por detrás" do
-        @lista.extraer_delante()
-        @lista.extrar_detras()
+      it "Se debe poder extraer un elemento por delante y por detrás" do
+        expect(@lista.extraer_delante).to  eq(5)
+        # expect(@lista.extraer_detras).to  eq(8)
       end
-      @lista.to_s
+      
     end
   
     

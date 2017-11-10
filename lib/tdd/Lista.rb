@@ -1,5 +1,5 @@
 
-Nodo = Struct.new(:value, :next, :prev)  
+Nodo = Struct.new(:value, :Next_, :prev)  
 
 class Lista 
     
@@ -13,10 +13,10 @@ class Lista
         def insertar_delante(dato)
             if (tam == 0) |
                 @cola = dato 
-                dato.next = nil
+                dato.Next_ = nil
             else  
                 @cabeza.prev = dato
-                dato.next = @cabeza
+                dato.Next_ = @cabeza
             end 
             
             @cabeza = dato  #|nil|cabeza/dato|nil
@@ -26,19 +26,50 @@ class Lista
         end
         #inserta por la cola y aunmenta tamaño de lista 
         def insertar_detras(dato)
-            if (tam == 0)
+            if (@tam == 0)
                 @cabeza = dato
                 dato.prev = nil
             else
-                @cola.next = dato
+                @cola.Next_ = dato
                 dato.prev = @cola
             end
             @cola = dato 
-            dato.next = nil
+            dato.Next_ = nil
             @tam = @tam + 1 
         end
+        #extraer un elemento por la cabeza 
+        def extraer_delante
+            if(@tam == 0)
+               puts "La Lista está vacía"
+           else
+               aux = @cabeza
+               (@cabeza[:Next_]).prev = nil
+               @cabeza = @cabeza[:Next_]
+               @tam = @tam - 1
+               return aux[:value]
+           end
+        end
+        #extraer un elemento por la cola
+        def extraer_detras
+            if(@tam == 0)
+               puts "La Lista está vacía"
+            else
+               aux = @cola
+            #   @cola[:prev]).Next_ = nil 
+               @cola = @cola[:prev]
+               @tam = @tam - 1
+               return aux[:value]
+            end
+        end
+        #mostrar lista
+        def to_s
+           aux = @cabeza
+           while(aux != nil)
+               puts aux.value
+               aux = aux.Next_
+           end
+        end
         
-              
-        
-end
+end 
+
 
