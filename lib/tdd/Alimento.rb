@@ -37,10 +37,21 @@ class Alimento
     end 
 end 
 
-class Grupo_Alimento 
+class Grupo_de_Alimento < Alimento 
+     attr_reader :grupo
+     
+     def initialize( )
+         super(0,0,0,0)             #encadenamiento (chaining)
+         @grupo = grupo
+     end
+   
+    
+  
 
 
 
 
 
 end
+
+# grupo, nombre, proteinas, glucidos, grasas,

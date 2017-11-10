@@ -135,8 +135,17 @@ RSpec.describe Lista do
     end
 end
 
-RSpec.describe Grupo_Alimento  do
-  
+RSpec.describe Grupo_de_Alimento  do
+    context "1) herencia" do
+      before :each do
+        @grupo1 = Grupo_de_Alimento.new()
+      end    
+          
+      it "Un objeto grupo1 es una instancia de la clase Grupo_de_Alimento" do
+        expect(@grupo1).to be_an_instance_of(Grupo_de_Alimento) 
+      end
+      
+  end
   
   
 end
