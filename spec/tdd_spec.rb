@@ -159,8 +159,20 @@ RSpec.describe Grupo_de_Alimento  do
       it "Un grupo1 es un BasicObject" do
         expect(@grupo1).to be_a_kind_of(BasicObject) 
       end
-  end
-  
+    end
+    
+    context "2) Tipo" do 
+      before :each do
+        @grupo1 = Grupo_de_Alimento.new()
+      end    
+      
+      it "Un objeto grupo1 responde al método grupo" do
+         expect(@grupo1).to respond_to(:grupo) 
+      end
+      
+    
+    end 
+
   
 end
 
