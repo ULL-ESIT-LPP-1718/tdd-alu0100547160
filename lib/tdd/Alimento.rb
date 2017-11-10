@@ -36,3 +36,11 @@ class Alimento
         ve
     end 
 end 
+
+class Grupo_Alimento 
+
+
+
+
+
+end

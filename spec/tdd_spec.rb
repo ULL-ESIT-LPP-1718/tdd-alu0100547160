@@ -21,7 +21,6 @@ RSpec.describe Alimento do
       expect(true).to eq(true)
     end
   end 
-  
   describe "2) Expectativas de los atributos de la clase Alimento" do
     
     it "Se almacena correctamente el atributo nombre" do
@@ -85,10 +84,7 @@ RSpec.describe Alimento do
     end
   
   end
-    
-  
 end
-
 
   
 RSpec.describe Lista do
@@ -111,8 +107,6 @@ RSpec.describe Lista do
       end
     end
  
-  
-  
     context "2) Lista:" do
       it "Debe existir la clase Lista" do 
         expect(Lista).to be_a(Class)
@@ -139,8 +133,12 @@ RSpec.describe Lista do
       end
       
     end
+end
+
+RSpec.describe Grupo_Alimento  do
   
-    
+  
+  
 end
 
 

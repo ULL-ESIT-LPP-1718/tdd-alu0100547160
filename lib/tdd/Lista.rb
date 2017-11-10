@@ -73,3 +73,18 @@ class Lista
 end 
 
 
+
+
+# @nodo1 = Nodo.new(5,nil,nil)
+# @nodo2 = Nodo.new(8,nil,nil)
+# @nodo3 = Nodo.new(9,nil,nil)
+# @lista = Lista.new()
+# @lista.insertar_delante(@nodo1)
+# @lista.insertar_detras(@nodo2)
+# @lista.to_s
+# @lista.extraer_delante
+# @lista.to_s
+# @lista.extraer_detras
+# @lista.to_s
+# @lista.insertar_delante
+# @lista.to_s
