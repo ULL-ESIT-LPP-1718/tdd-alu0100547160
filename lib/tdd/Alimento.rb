@@ -62,7 +62,7 @@ class Grupo_de_Alimento < Alimento
             @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
         else
             false
-      end    
+        end
         
     end 
     
@@ -81,7 +81,14 @@ class Grupo_de_Alimento < Alimento
 
 end
 
-@comida1 = Alimento.new('Bacalao', 17.7, 0.0, 0.4)
-@comida2 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
-puts @comida2.to_s
-puts @comida2.==(@comida1)
+# @comida1 = Alimento.new('Bacalao', 17.7, 0.0, 0.4)
+# @comida2 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
+# puts @comida2.to_s
+# puts @comida2.==(@comida1)
+
+
+
+
+r = [1,2,3,4,5,6].detect{ |i| i.between?(4,5)}
+# r = [1,2,3,4,5].select { |num|  num.even?  }   #=> [2, 4]
+puts r
