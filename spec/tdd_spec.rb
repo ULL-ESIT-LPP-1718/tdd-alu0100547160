@@ -216,7 +216,8 @@ RSpec.describe Grupo_de_Alimento do
         @grupo72 = Grupo_de_Alimento.new('Frutas', 'Plátanos', 1.2, 21.4, 0.2)
         @grupo73 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
         
-        # @listas.insertar_detras(@grupo11)
+        @nodo1 = Nodo.new(@grupo73,nil,nil)
+        @listas.insertar_detras(@nodo1)
         # @listas.insertar_detras(@grupo12)
         # @listas.insertar_detras(@grupo13)
         # @listas.insertar_detras(@grupo21)
@@ -229,7 +230,9 @@ RSpec.describe Grupo_de_Alimento do
       
       it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
         puts @listas.to_s
+        
       end
+      
       
       
     end
