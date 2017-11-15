@@ -3,6 +3,7 @@ Nodo = Struct.new(:value, :Next_, :prev)
 # Clase Lista , es una lista doblemente enlazada
 # @author Lisseth Vergaray Del Aguila
 class Lista 
+    #Módulo Enumerable para sort, map, collect, etc
     include Enumerable
     # @return [Numeric] el tamaño de la lista 
     # @return [Pointer] el puntero cabeza de lista
@@ -48,7 +49,7 @@ class Lista
             @tam = @tam + 1 
         end
         # Extraer un elemento por la cabeza 
-        # @return aux[:value] retorna el campo value  del nodo
+        # @return aux retorna el campo value  del nodo
         def extraer_delante
             if(@tam == 0)
                puts "La Lista está vacía"
@@ -61,7 +62,7 @@ class Lista
             end
         end
         #Extraer un elemento por la cola
-        # @return aux[:value] retorna el campo value  del nodo
+        # @return aux retorna el campo value  del nodo
         def extraer_detras
             if(@tam == 0)
                puts "La Lista está vacía"

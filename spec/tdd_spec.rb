@@ -1,6 +1,6 @@
 require "spec_helper"
-require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Alimento.rb"
-require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb"
+# require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Alimento.rb"
+# require "/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb"
 
 
 RSpec.describe Alimento do
