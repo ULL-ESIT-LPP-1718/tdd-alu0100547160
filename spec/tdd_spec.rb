@@ -231,11 +231,9 @@ RSpec.describe Grupo_de_Alimento do
 
       end
       
-      it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
-        puts @listas.to_s 
-        
-        
-      end
+      # it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
+      #   puts @listas.to_s 
+      # end
       
       
       
@@ -248,6 +246,10 @@ RSpec.describe Comparable do
     before :all do 
       @alimento1 = Alimento.new('Cerdo', 21.5, 0.0, 6.3)
       @alimento2 = Alimento.new('Plátanos', 1.2, 21.4, 0.2)
+      
+      @grupo_alimento1 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
+      @grupo_alimento2 = Grupo_de_Alimento.new('Frutas', 'Manzana', 0.3, 12.4, 0.4)
+      @grupo_alimento3 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
     end
   
     context "1) Para clase Alimento :<=>" do 
@@ -267,11 +269,31 @@ RSpec.describe Comparable do
         expect(@alimento1).to respond_to(:>=)
       end
     end
-    
+    context "2) Para clase Grupo_de_Alimento : <=>" do 
+      it "Se debe poder comparar con  > dos objetos Grupo_de_Alimento" do
+        expect(@grupo_alimento1.grupo > @grupo_alimento2.grupo).to eq(true)   
+      end
+      it "Se debe poder comparar con < dos Objetos Grupo_de_Alimento" do
+        expect(@grupo_alimento1 < @grupo_alimento2).to eq(false)
+      end
+      it "Se debe poder comparar con == dos Grupo_de_Alimento" do 
+        expect(@grupo_alimento2 == @grupo_alimento3).to eq(false)
+      end
+      it "Se debe poder comprar con <= dos Grupo_de_Alimento" do
+        expect(@grupo_alimento1 <= @grupo_alimento2).to eq(false)
+      end 
+      it "Los métodos del módulo Comparable debe poder ser accedidos" do
+        expect(@grupo_alimento3).to respond_to(:==)
+      end
+      # it "Usando el between de Comparable" do
+      #   expect(@grupo_alimento2 ).to between(@grupo_alimento1,@grupo_alimento3)
+      # end
+    end 
 end
 
 RSpec.describe Enumerable do
-  
+      
+    
 end
 
 

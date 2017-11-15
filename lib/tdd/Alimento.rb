@@ -69,10 +69,11 @@ class Grupo_de_Alimento < Alimento
         end
         
     end 
-    
-    def []
-        
+    # Definiendo <=> para el Mixin de Comporable 
+    def <=>(otro)
+        self.get_valor_energetico <=> otro.get_valor_energetico && self.grupo <=> otro.grupo
     end
+
 
 end
 
