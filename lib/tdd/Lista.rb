@@ -73,8 +73,17 @@ class Lista
                aux = aux.Next_
            end
         end
-        
-        
+        #Metodo de acceso a acada elemento, Comparable y Enumerable
+        def each
+            aux = @cabeza
+            while(aux != nil)
+                yield aux[:value]
+                aux= aux[:Next_]
+            end
+        end
+        def [](nodo)
+            return (nodo[:value]).to_float
+        end
 end 
 
 

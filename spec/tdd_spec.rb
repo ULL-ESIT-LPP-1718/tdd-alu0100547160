@@ -302,11 +302,11 @@ RSpec.describe Enumerable do
       @grupo21 = Grupo_de_Alimento.new('Carnes y derivados', 'Cerdo', 21.5, 0.0, 6.3)
       @grupo22 = Grupo_de_Alimento.new('Carnes y derivados', 'Ternera', 21.1, 0.0, 3.1)
       @grupo23 = Grupo_de_Alimento.new('Carnes y derivados', 'Pollo', 20.6, 0.0, 5.6)
-      @listas.insertar_detras(@grupo73)
-      @listas.insertar_detras(@grupo72)
-      @listas.insertar_delante(@grupo71)
-      @listas.insertar_delante(@grupo31)
+      @listas.insertar_detras(@grupo11)
+      @listas.insertar_detras(@grupo12) 
+      @listas.insertar_delante(@grupo13)
       @listas.insertar_delante(@grupo21)
+      @listas.insertar_delante(@grupo22)
       
     end 
     
@@ -320,10 +320,16 @@ RSpec.describe Enumerable do
     end
     
     context "2) Probamos los métodos en nuestra lista de alimentos" do 
-      it "Podemos hacer un sort de nuestra lista de alimentos" do
+      it "Se puede hacer un sort de nuestra lista de alimentos" do
         x = @listas.sort 
-        expect(x).to eq('bla') 
+        expect(x).to eq([@grupo12,@grupo13,@grupo22,@grupo21,@grupo11]) 
+        
       end
+      it "Se puede hacer un max" do
+        x =  @listas.max
+        expect(x).to eq (@grupo11)
+      end 
+      
     end
     
 end
