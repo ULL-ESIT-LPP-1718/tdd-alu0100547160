@@ -2,7 +2,7 @@
 Nodo = Struct.new(:value, :Next_, :prev)  
 
 class Lista 
-    
+    include Enumerable
     attr_accessor :tam, :cabeza, :cola
         def initialize()
             @tam = 0
