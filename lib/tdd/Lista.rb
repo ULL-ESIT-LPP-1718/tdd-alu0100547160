@@ -2,7 +2,7 @@
 Nodo = Struct.new(:value, :Next_, :prev)  
 
 class Lista 
-    include Enumerable
+    
     attr_accessor :tam, :cabeza, :cola
         def initialize()
             @tam = 0
@@ -73,14 +73,7 @@ class Lista
                aux = aux.Next_
            end
         end
-        #Metodo de acceso a acada elemento, Comparable y Enumerable
-        def each
-            aux = @cabeza
-            while(aux != nil)
-                yield aux[:value]
-                aux= aux[:next]
-            end
-        end
+        
         
 end 
 

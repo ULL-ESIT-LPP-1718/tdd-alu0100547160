@@ -292,7 +292,30 @@ RSpec.describe Comparable do
 end
 
 RSpec.describe Enumerable do
+    before :all do 
+      @listas = Lista.new()
+      #Huevos lácteos y helados 
+      @grupo11 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
+      @grupo12 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Leche vaca', 3.3, 4.8, 3.2)
+      @grupo13 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Yogurt', 3.8, 4.9, 3.8)
+      #Carnes y derivados
+      @grupo21 = Grupo_de_Alimento.new('Carnes y derivados', 'Cerdo', 21.5, 0.0, 6.3)
+      @grupo22 = Grupo_de_Alimento.new('Carnes y derivados', 'Ternera', 21.1, 0.0, 3.1)
+      @grupo23 = Grupo_de_Alimento.new('Carnes y derivados', 'Pollo', 20.6, 0.0, 5.6)
+      @listas.insertar_detras(@grupo73)
+      @listas.insertar_detras(@grupo72)
+      @listas.insertar_delante(@grupo71)
+      @listas.insertar_delante(@grupo31)
+      @listas.insertar_delante(@grupo21)
       
+    end 
+    
+    context "1) Se debe poder acceder a métodos de Módulo Enumerable" do
+      it "Método map"  do 
+        expect(@listas).to respond_to(:max)
+      end
+      
+    end
     
 end
 

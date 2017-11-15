@@ -2,7 +2,7 @@ require '/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb'
 
 class Alimento 
     include Comparable
-    include Enumerable
+    
     attr_accessor :nombre, :proteinas, :glucidos, :grasas
     
     def initialize (nombre, proteinas, glucidos, grasas)
