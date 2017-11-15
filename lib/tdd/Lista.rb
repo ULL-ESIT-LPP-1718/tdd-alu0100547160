@@ -83,20 +83,20 @@ end
 #@nodo1 = Nodo.new(5,nil,nil)
 #@nodo2 = Nodo.new(8,nil,nil)
 # @nodo3 = Nodo.new(9,nil,nil)
- @lista = Lista.new()
-# @lista.insertar_delante(@nodo1)
- @lista.insertar_detras(5)
- @lista.insertar_detras(8)
- @lista.insertar_detras(15)
- @lista.insertar_delante(3)
- @lista.to_s
- s = @lista.extraer_delante
- puts s 
- s = @lista.extraer_detras
- puts s 
- puts @lista.to_s
-# @lista.to_s
-# @lista.extraer_detras
-# @lista.to_s
-# @lista.insertar_delante
-# @lista.to_s
+#  @lista = Lista.new()
+# # @lista.insertar_delante(@nodo1)
+#  @lista.insertar_detras(5)
+#  @lista.insertar_detras(8)
+#  @lista.insertar_detras(15)
+#  @lista.insertar_delante(3)
+#  @lista.to_s
+#  s = @lista.extraer_delante
+#  puts s 
+#  s = @lista.extraer_detras
+#  puts s 
+#  puts @lista.to_s
+# # @lista.to_s
+# # @lista.extraer_detras
+# # @lista.to_s
+# # @lista.insertar_delante
+# # @lista.to_s

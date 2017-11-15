@@ -314,7 +314,16 @@ RSpec.describe Enumerable do
       it "Método map"  do 
         expect(@listas).to respond_to(:max)
       end
-      
+      it "Método collect"  do 
+        expect(@listas).to respond_to(:collect)
+      end
+    end
+    
+    context "2) Probamos los métodos en nuestra lista de alimentos" do 
+      it "Podemos hacer un sort de nuestra lista de alimentos" do
+        x = @listas.sort 
+        expect(x).to eq('bla') 
+      end
     end
     
 end
