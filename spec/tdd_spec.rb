@@ -250,11 +250,24 @@ RSpec.describe Comparable do
       @alimento2 = Alimento.new('Plátanos', 1.2, 21.4, 0.2)
     end
   
-    context "1) <=>" do 
-      it "Se debe poder comparar dos Objetos Alimento" do
-        expect(@alimento1 > @alimento2).to eq(false)
+    context "1) Para clase Alimento :<=>" do 
+      it "Se debe poder comparar con  > dos objetos Alimento" do
+        expect(@alimento1 > @alimento2).to eq(true)   
+      end
+      it "Se debe poder comparar con < dos Objetos Alimento" do
+        expect(@alimento1 < @alimento2).to eq(false)
+      end
+      it "Se debe poder comparar con == dos Objetos ALimento" do 
+        expect(@alimento1 == @alimento2).to eq(false)
+      end
+      it "Se debe poder comprar con <= dos Objetos Alimento" do
+        expect(@alimento1 <= @alimento2).to eq(false)
+      end 
+      it "Los métodos del módulo Comparable debe poder ser accedidos" do
+        expect(@alimento1).to respond_to(:>=)
       end
     end
+    
 end
 
 RSpec.describe Enumerable do

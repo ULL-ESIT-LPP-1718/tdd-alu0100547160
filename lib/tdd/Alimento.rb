@@ -34,7 +34,10 @@ class Alimento
         
         s
     end 
-    
+    #Método <=> para Mixin de Comparable 
+    def <=>(otro)
+        self.get_valor_energetico <=> otro.get_valor_energetico
+    end 
     
     def get_valor_energetico
         ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
