@@ -47,19 +47,27 @@ class Alimento
         
         s
     end 
+     #Restrictivo (con herencia - usa is_a?)
+    def ==(other)
+        if other.is_a?Alimento
+            @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
+        else
+            false
+        end
+    end 
     # Método <=> para Mixin de Comparable 
     # @param otro , recibe otro objeto Alimento para compararse
     def <=>(otro)
         self.get_valor_energetico <=> otro.get_valor_energetico
     end 
     # Método each para poder hacer uso de Enumerable 
-    def each 
-        yield @nombre
-        yield @proteinas
-        yield @glucidos
-        yield @grasas
-        yield self.get_valor_energetico
-    end
+    # def each 
+    #     yield @nombre
+    #     yield @proteinas
+    #     yield @glucidos
+    #     yield @grasas
+    #     yield self.get_valor_energetico
+    # end
     # Método para calcular el valor enérgetico del ALimento
     # @return ve 
     def get_valor_energetico
@@ -85,8 +93,8 @@ class Grupo_de_Alimento < Alimento
     end
     #Restrictivo (con herencia - usa is_a?)
     def ==(other)
-        if other.is_a?Alimento
-            @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
+        if other.is_a?Grupo_de_Alimento
+            @grupo == other.grupo && @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
         else
             false
         end
@@ -96,14 +104,14 @@ class Grupo_de_Alimento < Alimento
         self.get_valor_energetico <=> otro.get_valor_energetico #&& self.grupo <=> otro.grupo
     end
     #Método para Enumerable
-    def each 
-        yield @grupo
-        yield @nombre
-        yield @proteinas
-        yield @glucidos
-        yield @grasas
-        yield self.get_valor_energetico
-    end
+    # def each 
+    #     yield @grupo
+    #     yield @nombre
+    #     yield @proteinas
+    #     yield @glucidos
+    #     yield @grasas
+    #     yield self.get_valor_energetico
+    # end
     
 end
 

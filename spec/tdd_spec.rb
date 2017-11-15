@@ -327,7 +327,11 @@ RSpec.describe Enumerable do
       end
       it "Se puede hacer un max" do
         x =  @listas.max
-        expect(x).to eq (@grupo11)
+        expect(x).to eq (@grupo11) 
+      end 
+      it "Se puede hacer un min" do
+        x =  @listas.min
+        expect(x).to eq (@grupo12) 
       end 
       
     end

@@ -82,7 +82,7 @@ class Lista
                aux = aux.Next_
            end
         end
-        #Metodo de acceso a acada elemento, Comparable y Enumerable
+        #Metodo de acceso a acada elemento con Enumerable
         def each
             aux = @cabeza
             while(aux != nil)
