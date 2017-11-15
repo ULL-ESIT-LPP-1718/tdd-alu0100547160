@@ -1,15 +1,20 @@
-
+#Struct de un nodo para insertar en lista
 Nodo = Struct.new(:value, :Next_, :prev)  
-
+# Clase Lista , es una lista doblemente enlazada
+# @author Lisseth Vergaray Del Aguila
 class Lista 
     include Enumerable
+    # @return [Numeric] el tamaño de la lista 
+    # @return [Pointer] el puntero cabeza de lista
+    # @return [Pointer] el puntero cola de lista
     attr_accessor :tam, :cabeza, :cola
         def initialize()
             @tam = 0
             @cabeza = nil
             @cola = nil
         end 
-        #Inserta por la cabeza y aumenta tamaño de lista 
+        # Inserta un nodo por la cabeza de la lista 
+        # @param dato [Value]  será el campo value del nodo 
         def insertar_delante(dato)
             dato_ = Nodo.new(dato,nil,nil)
             if (tam == 0) 
@@ -26,7 +31,8 @@ class Lista
             @tam = @tam + 1
         
         end
-        #Inserta por la cola y aunmenta tamaño de lista 
+        # Inserta por la cola y aunmenta tamaño de lista 
+        # @param dato [Value] será el campo value del nodo
         def insertar_detras(dato)
             dato_ = Nodo.new(dato,nil,nil)
             if (@tam == 0)
@@ -41,7 +47,8 @@ class Lista
            
             @tam = @tam + 1 
         end
-        #Extraer un elemento por la cabeza 
+        # Extraer un elemento por la cabeza 
+        # @return aux[:value] retorna el campo value  del nodo
         def extraer_delante
             if(@tam == 0)
                puts "La Lista está vacía"
@@ -54,6 +61,7 @@ class Lista
             end
         end
         #Extraer un elemento por la cola
+        # @return aux[:value] retorna el campo value  del nodo
         def extraer_detras
             if(@tam == 0)
                puts "La Lista está vacía"
@@ -65,7 +73,7 @@ class Lista
                return aux[:value]
             end
         end
-        #Mostrar lista
+        #Mostrar la lista 
         def to_s
            aux = @cabeza
            while(aux != nil)
@@ -81,9 +89,7 @@ class Lista
                 aux= aux[:Next_]
             end
         end
-        def [](nodo)
-            return (nodo[:value]).to_float
-        end
+        
 end 
 
 

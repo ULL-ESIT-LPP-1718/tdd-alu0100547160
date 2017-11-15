@@ -1,44 +1,58 @@
 require '/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb'
-
+# Clase ALimento , Plantilla para representar un alimento 
+# con sus respectivo nombre e información sobre nutrientes
+# @author Lisseth Vergaray Del Aguila
 class Alimento 
+    #Módulo comparable que se incluye para hacer uso de sus utulidades
     include Comparable
-    include Enumerable
+    # @return [String] nombre del alimento
+    # @return [Numeric] proteinas que contiene el alimento
+    # @return [Numeric] glúcidos que contiene el alimento
+    # @return [Numeric] grasas que contiene el alimento
     attr_accessor :nombre, :proteinas, :glucidos, :grasas
     
+    # Método para inicializar el objeto
+    # @param nombre proteinas glucidos grasas
     def initialize (nombre, proteinas, glucidos, grasas)
         @nombre = nombre 
         @proteinas = proteinas
         @glucidos = glucidos
         @grasas = grasas
     end
-
+    # Getter de atributo nombre 
+    # @return nombre
     def get_nombre
         @nombre
     end
-    
+    # Getter de atributo proteínas 
+    # @return proteinas
     def get_proteinas
         @proteinas
     end
-    
+    # Getter de atributo glúcidos
+    # @return glucidos
     def get_glucidos
         @glucidos
     end
-    
+    # Getter de atributo grasas
+    # @return grasas
     def get_grasas
         @grasas
     end
-    
+    # Método para mostrar el objeto
+    # @return cadena s
     def to_s
         s = ""
         s << "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
         
         s
     end 
-    #Método <=> para Mixin de Comparable 
+    # Método <=> para Mixin de Comparable 
+    # @param otro , recibe otro objeto Alimento para compararse
     def <=>(otro)
         self.get_valor_energetico <=> otro.get_valor_energetico
     end 
-    #Método each para poder hacer uso de Enumerable 
+    # Método each para poder hacer uso de Enumerable 
     def each 
         yield @nombre
         yield @proteinas
@@ -46,26 +60,28 @@ class Alimento
         yield @grasas
         yield self.get_valor_energetico
     end
+    # Método para calcular el valor enérgetico del ALimento
+    # @return ve 
     def get_valor_energetico
         ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
         ve
     end 
 end 
- 
+
+# Clase Grupo_de_Alimento que hereda de Alimento 
+# @author Lisseth Vergaray 
 class Grupo_de_Alimento < Alimento 
+    # @return [String] grupo de alimento 
     attr_reader :grupo
-     
+    # Método para inicializar el objeto 
     def initialize(grupo, nombre, proteinas, glucidos, grasas )
          @grupo = grupo 
          super(nombre, proteinas, glucidos, grasas)  #encadenamiento (chaining)
     end
-    #encadenamiento (chaining)
+    #Encadenamiento (chaining)
     def to_s
     s = "#{@grupo}    "
     s << super.to_s  
-    
-    s
-    
     end
     #Restrictivo (con herencia - usa is_a?)
     def ==(other)
