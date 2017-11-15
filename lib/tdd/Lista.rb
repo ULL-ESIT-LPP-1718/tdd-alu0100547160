@@ -64,7 +64,6 @@ class Lista
                @tam = @tam - 1
                return aux[:value]
             end
-            
         end
         #Mostrar lista
         def to_s
@@ -74,7 +73,6 @@ class Lista
                aux = aux.Next_
            end
         end
-    
         #Metodo de acceso a acada elemento, Comparable y Enumerable
         def each
             aux = @cabeza

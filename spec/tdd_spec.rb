@@ -228,14 +228,7 @@ RSpec.describe Grupo_de_Alimento do
         @listas.insertar_delante(@grupo71)
         @listas.insertar_delante(@grupo31)
         @listas.insertar_delante(@grupo21)
-        # @listas.insertar_detras(@grupo12)
-        # @listas.insertar_detras(@grupo13)
-        # @listas.insertar_detras(@grupo21)
-        # @listas.insertar_detras(@grupo22)
-        # @listas.insertar_detras(@grupo23)
-        # @listas.insertar_detras(@grupo31)
-        # @listas.insertar_detras(@grupo32)
-        # @listas.insertar_detras(@grupo33)
+
       end
       
       it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
@@ -248,6 +241,23 @@ RSpec.describe Grupo_de_Alimento do
       
     end
 
+  
+end
+
+RSpec.describe Comparable do
+    before :all do 
+      @alimento1 = Alimento.new('Cerdo', 21.5, 0.0, 6.3)
+      @alimento2 = Alimento.new('Plátanos', 1.2, 21.4, 0.2)
+    end
+  
+    context "1) <=>" do 
+      it "Se debe poder comparar dos Objetos Alimento" do
+        expect(@alimento1 > @alimento2).to eq(false)
+      end
+    end
+end
+
+RSpec.describe Enumerable do
   
 end
 

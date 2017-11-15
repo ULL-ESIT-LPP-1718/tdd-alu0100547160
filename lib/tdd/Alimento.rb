@@ -35,6 +35,7 @@ class Alimento
         s
     end 
     
+    
     def get_valor_energetico
         ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
         ve
@@ -65,15 +66,6 @@ class Grupo_de_Alimento < Alimento
         end
         
     end 
-    
-    def <=>(otro)
-      
-            if(@nombre = otro.nombre)
-                
-            else
-                @nombre <=> otro.nombre
-            end
-    end
     
     def []
         
