@@ -95,6 +95,7 @@ RSpec.describe Lista do
       @nodo1 = Nodo.new(5,nil,nil)
       @nodo2 = Nodo.new(8,nil,nil)
       @lista = Lista.new()
+      
     end
     
     context "1) Nodo:" do
@@ -126,12 +127,17 @@ RSpec.describe Lista do
         expect(@lista.cola).to be nil
       end
       it "Se debe poder insertar un elemento en la lista" do
-        @lista.insertar_delante(@nodo1)
-        @lista.insertar_detras(@nodo2)
+        @lista.insertar_delante(5)
+        @lista.insertar_detras(8)
       end
       it "Se debe poder extraer un elemento por delante y por detrás" do
+        @lista.insertar_detras(5)
+        @lista.insertar_detras(9)
+        
+        @lista.insertar_detras(15)
+
         expect(@lista.extraer_delante).to  eq(5)
-        # expect(@lista.extraer_detras).to  eq(8)
+        expect(@lista.extraer_detras).to  eq(15) 
       end
       
     end
@@ -216,8 +222,12 @@ RSpec.describe Grupo_de_Alimento do
         @grupo72 = Grupo_de_Alimento.new('Frutas', 'Plátanos', 1.2, 21.4, 0.2)
         @grupo73 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
         
-        @nodo1 = Nodo.new(@grupo73,nil,nil)
-        @listas.insertar_detras(@nodo1)
+        #@nodo1 = Nodo.new(@grupo73,nil,nil)
+        @listas.insertar_detras(@grupo73)
+        @listas.insertar_detras(@grupo72)
+        @listas.insertar_delante(@grupo71)
+        @listas.insertar_delante(@grupo31)
+        @listas.insertar_delante(@grupo21)
         # @listas.insertar_detras(@grupo12)
         # @listas.insertar_detras(@grupo13)
         # @listas.insertar_detras(@grupo21)
@@ -229,7 +239,8 @@ RSpec.describe Grupo_de_Alimento do
       end
       
       it "El grupo Huevos lácteos y helados, Carnes y derivados, Pescados y mariscos" do
-        puts @listas.to_s
+        puts @listas.to_s 
+        
         
       end
       

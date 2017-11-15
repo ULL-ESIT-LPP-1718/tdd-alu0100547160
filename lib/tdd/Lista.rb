@@ -9,59 +9,64 @@ class Lista
             @cabeza = nil
             @cola = nil
         end 
-        #inserta por la cabeza y aumenta tamaño de lista 
+        #Inserta por la cabeza y aumenta tamaño de lista 
         def insertar_delante(dato)
+            dato_ = Nodo.new(dato,nil,nil)
             if (tam == 0) 
-                @cola = dato 
-                dato[:Next_] = nil
+                @cola = dato_ 
+                @cabeza = dato_
+                
             else  
-                @cabeza.prev = dato
-                dato[:Next_] = @cabeza
+                dato_[:Next_] = @cabeza  #|nil|cabeza/dato|nil
+                @cabeza.prev = dato_
+                dato_[:prev] = nil
+                @cabeza = dato_
+                
             end 
-            
-            @cabeza = dato  #|nil|cabeza/dato|nil
-            dato.prev = nil
             @tam = @tam + 1
         
         end
-        #inserta por la cola y aunmenta tamaño de lista 
+        #Inserta por la cola y aunmenta tamaño de lista 
         def insertar_detras(dato)
+            dato_ = Nodo.new(dato,nil,nil)
             if (@tam == 0)
-                @cabeza = dato
-                dato.prev= nil
+                @cabeza = dato_
+                @cola = dato_
             else
-                @cola.prev= dato
-                dato.prev= @cola
+                dato_[:prev] = @cola
+                @cola[:Next_]= dato_
+                dato_[:Next_] = nil
+                @cola = dato_
             end
-            @cola = dato 
-            dato[:Next_] = nil
+           
             @tam = @tam + 1 
         end
-        #extraer un elemento por la cabeza 
+        #Extraer un elemento por la cabeza 
         def extraer_delante
             if(@tam == 0)
                puts "La Lista está vacía"
-           else
+            else
                aux = @cabeza
-              # (@cabeza[:Next_]).prev = nil
                @cabeza = @cabeza[:Next_]
+               @cabeza[:prev] = nil
                @tam = @tam - 1
                return aux[:value]
-           end
+            end
         end
-        #extraer un elemento por la cola
+        #Extraer un elemento por la cola
         def extraer_detras
             if(@tam == 0)
                puts "La Lista está vacía"
             else
                aux = @cola
-            #   @cola[:prev]).Next_ = nil 
                @cola = @cola[:prev]
+               @cola[:Next_] = nil
                @tam = @tam - 1
                return aux[:value]
             end
+            
         end
-        #mostrar lista
+        #Mostrar lista
         def to_s
            aux = @cabeza
            while(aux != nil)
@@ -69,7 +74,7 @@ class Lista
                aux = aux.Next_
            end
         end
-        
+    
         #Metodo de acceso a acada elemento, Comparable y Enumerable
         def each
             aux = @cabeza
@@ -84,14 +89,21 @@ end
 
 
 
-# @nodo1 = Nodo.new(5,nil,nil)
-# @nodo2 = Nodo.new(8,nil,nil)
+#@nodo1 = Nodo.new(5,nil,nil)
+#@nodo2 = Nodo.new(8,nil,nil)
 # @nodo3 = Nodo.new(9,nil,nil)
-# @lista = Lista.new()
+ @lista = Lista.new()
 # @lista.insertar_delante(@nodo1)
-# @lista.insertar_detras(@nodo2)
-# @lista.to_s
-# @lista.extraer_delante
+ @lista.insertar_detras(5)
+ @lista.insertar_detras(8)
+ @lista.insertar_detras(15)
+ @lista.insertar_delante(3)
+ @lista.to_s
+ s = @lista.extraer_delante
+ puts s 
+ s = @lista.extraer_detras
+ puts s 
+ puts @lista.to_s
 # @lista.to_s
 # @lista.extraer_detras
 # @lista.to_s

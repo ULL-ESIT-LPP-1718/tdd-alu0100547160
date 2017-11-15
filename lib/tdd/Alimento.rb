@@ -50,7 +50,7 @@ class Grupo_de_Alimento < Alimento
     end
     #encadenamiento (chaining)
     def to_s
-    s = "#{@grupo}  "
+    s = "#{@grupo}    "
     s << super.to_s  
     
     s
