@@ -63,19 +63,44 @@ class Alimento
         self.get_valor_energetico <=> otro.get_valor_energetico
     end 
     # Método each para poder hacer uso de Enumerable 
-    def each 
-        yield @nombre
-        yield @proteinas
-        yield @glucidos
-        yield @grasas
-        yield self.get_valor_energetico
-    end
+    # def each 
+    #     yield @nombre
+    #     yield @proteinas
+    #     yield @glucidos
+    #     yield @grasas
+    #     yield self.get_valor_energetico
+    # end
     # Método para calcular el valor enérgetico del ALimento
     # @return ve 
     def get_valor_energetico
         ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
         ve
     end 
+    # Método para calcular aibc de dos individuos
+    # @return suma que es un vector con el sumatorio de los indices 
+    def aibc 
+        r = []
+		(0..g.size -  1).map { |i|
+			s = []
+			(1..g[i].size-1).map { |m|
+				if g[i][m] < g[i][0] 
+				    s << 0.0
+				else
+				    s << (((g[i][m] - g[i][0]) + (g[i][m-1] - g[i][0]))/2)*5
+				end
+			}
+		r << s
+		}
+		suma = []
+		(0..g.size-1).collect { |e|
+			s = 0
+			(0..r[e].size-1).map { |k|
+				s = s + r[e][k]
+			}
+			suma << s
+		}
+		suma
+    end   
 end 
 
 # Clase Grupo_de_Alimento que hereda de Alimento 
