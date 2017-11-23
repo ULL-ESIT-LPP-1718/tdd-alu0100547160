@@ -47,7 +47,7 @@ class Alimento
         
         s
     end 
-     #Restrictivo (con herencia - usa is_a?)
+    # Restrictivo (con herencia - usa is_a?)
     def ==(other)
         if other.is_a?Alimento
             @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas

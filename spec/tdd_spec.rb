@@ -6,9 +6,9 @@ require "spec_helper"
 RSpec.describe Alimento do
   
   before :each do
-     @alimento1 = Alimento.new("Huevo frito",14.1,0.0,19.5)
-     @alimento2 = Alimento.new("Leche vaca",3.3,4.8,3.2)
-     @alimento3 = Alimento.new("Yogurt",3.8,4.9,3.8)
+    @alimento1 = Alimento.new("Huevo frito",14.1,0.0,19.5)
+    @alimento2 = Alimento.new("Leche vaca",3.3,4.8,3.2)
+    @alimento3 = Alimento.new("Yogurt",3.8,4.9,3.8)
   end 
   describe "1) Expectativas de la clase" do
     it "Se instancia bien el objeto @alimento" do
@@ -175,16 +175,16 @@ RSpec.describe Grupo_de_Alimento do
       end    
       
       it "Un objeto grupo1 responde al método grupo" do
-         expect(@grupo1).to respond_to(:grupo) 
+        expect(@grupo1).to respond_to(:grupo) 
       end
       it "Un objeto grupo1 responde al método nombre por la herencia " do
-         expect(@grupo1).to respond_to(:nombre)
+        expect(@grupo1).to respond_to(:nombre)
       end
       it "Un objeto grupo1 responde a los métodos proteinas y glúcidos  por la herencia " do
-         expect(@grupo1).to respond_to(:proteinas, :glucidos) 
+        expect(@grupo1).to respond_to(:proteinas, :glucidos) 
       end
       it "un objeto grupo1 responde al método grasas" do
-         expect(@grupo1).to respond_to('get_grasas') 
+        expect(@grupo1).to respond_to('get_grasas') 
       end
       
     end 
@@ -338,4 +338,21 @@ RSpec.describe Enumerable do
     
 end
 
-
+RSpec.describe Alimento do 
+  
+    before :all do
+    #proteinas, glucidos, grasas
+    @compota_manzana = Alimento.new("Compota de Manzana",[[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
+                                                          [4.6,4.8,5.3,5.6,6.1,6.5,6.6,7.0,7.0,6.8,6.4,6.3,6.1,6.1,6.2,6.0,6.1,6.1,6.2,6.3,6.4,6.1,6.1,5.7,5.9]],
+                                                          0.2, 15.0,0.1)
+    
+    end 
+  
+    context "Agregando indices glucémicos" do 
+      it "El alimento tiene vector de indices glucémicos" do
+         expect(@compota_manzana).to eq("[[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
+                                                          [4.6,4.8,5.3,5.6,6.1,6.5,6.6,7.0,7.0,6.8,6.4,6.3,6.1,6.1,6.2,6.0,6.1,6.1,6.2,6.3,6.4,6.1,6.1,5.7,5.9]]") 
+      end
+    end 
+  
+end
