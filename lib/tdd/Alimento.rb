@@ -5,19 +5,21 @@ require '/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb'
 class Alimento 
     #Módulo comparable que se incluye para hacer uso de sus utulidades
     include Comparable
+    include Enumerable
     # @return [String] nombre del alimento
     # @return [Numeric] proteinas que contiene el alimento
     # @return [Numeric] glúcidos que contiene el alimento
     # @return [Numeric] grasas que contiene el alimento
-    attr_accessor :nombre, :proteinas, :glucidos, :grasas
+    attr_accessor :nombre, :proteinas, :g, :glucidos, :grasas
     
     # Método para inicializar el objeto
     # @param nombre proteinas glucidos grasas
-    def initialize (nombre, proteinas, glucidos, grasas)
+    def initialize (nombre, g, proteinas, glucidos, grasas)
         @nombre = nombre 
         @proteinas = proteinas
         @glucidos = glucidos
         @grasas = grasas
+        @g = g
     end
     # Getter de atributo nombre 
     # @return nombre
@@ -61,13 +63,13 @@ class Alimento
         self.get_valor_energetico <=> otro.get_valor_energetico
     end 
     # Método each para poder hacer uso de Enumerable 
-    # def each 
-    #     yield @nombre
-    #     yield @proteinas
-    #     yield @glucidos
-    #     yield @grasas
-    #     yield self.get_valor_energetico
-    # end
+    def each 
+        yield @nombre
+        yield @proteinas
+        yield @glucidos
+        yield @grasas
+        yield self.get_valor_energetico
+    end
     # Método para calcular el valor enérgetico del ALimento
     # @return ve 
     def get_valor_energetico
@@ -104,16 +106,20 @@ class Grupo_de_Alimento < Alimento
         self.get_valor_energetico <=> otro.get_valor_energetico #&& self.grupo <=> otro.grupo
     end
     #Método para Enumerable
-    # def each 
-    #     yield @grupo
-    #     yield @nombre
-    #     yield @proteinas
-    #     yield @glucidos
-    #     yield @grasas
-    #     yield self.get_valor_energetico
-    # end
+    def each 
+        yield @grupo
+        yield @nombre
+        yield @proteinas
+        yield @glucidos
+        yield @grasas
+        yield self.get_valor_energetico
+    end
     
 end
+
+# ________________________________________________________________________________________________
+
+#### pruebas para el funcionamiento de mis clases 
 
 # # @comida1 = Alimento.new('Bacalao', 17.7, 0.0, 0.4)
 # # @comida2 = Grupo_de_Alimento.new('Pescados y mariscos','Atún', 21.5, 0.0, 15.5)
