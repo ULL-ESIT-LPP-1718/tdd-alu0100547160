@@ -9,9 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lisseth Vergaray Del Aguila"]
   spec.email         = ["alu0100547160@ull.edu.es"]
 
-  spec.summary       = %q{Practica , Desarrollo por TDD,Jerarquia de clases  y herramienta Guard}
-  spec.description   = %q{se va a utilizar la metodologíaa de desarrollo dirigido por pruebas (Test
-Driven Development - TDD) y la herramienta RSpec.}
+  spec.summary       = %q{Practica 10, prueba en los tiempos de métodos each,for,sort con Benchmark}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100547160.git"
   spec.license       = "MIT"
 
@@ -38,5 +36,6 @@ Driven Development - TDD) y la herramienta RSpec.}
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "guard-bundler"
   spec.add_development_dependency "yard-rspec"
+  spec.add_development_dependency "coveralls"
   
 end
