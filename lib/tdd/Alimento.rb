@@ -1,4 +1,4 @@
-require '/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb'
+#require '/home/ubuntu/workspace/p6/tdd/lib/tdd/Lista.rb'
 # Clase ALimento , Plantilla para representar un alimento 
 # con sus respectivo nombre e información sobre nutrientes
 # @author Lisseth Vergaray Del Aguila
