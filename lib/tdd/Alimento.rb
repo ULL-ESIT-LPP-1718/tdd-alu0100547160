@@ -90,6 +90,7 @@ class Alimento
 				end
 			}
 		r << s
+		
 		}
 		suma = []
 		(0..g.size-1).collect { |e|

@@ -351,7 +351,7 @@ RSpec.describe Alimento do
         expect(@compota_manzana.aibc).to match_array([27.999999999999993,183.25])
       end
       it "Cálculo de ig" do 
-        expect((@ig = @compota_manzana.aibc.zip(@glucosa.aibc).map{ |e,u| (e / u) * 100 }).reduce(:+) / 2).to eq(52.21619897959183)
+        expect((@ig = @compota_manzana.aibc.zip(@glucosa.aibc).map{ |e,u| (e / u) * 100 }).reduce(:+) / @compota_manzana.aibc.size).to eq(52.21619897959183)
       end
     end   
   
