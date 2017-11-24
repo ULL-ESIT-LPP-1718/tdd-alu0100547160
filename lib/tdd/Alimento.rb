@@ -5,7 +5,6 @@
 class Alimento 
     #Módulo comparable que se incluye para hacer uso de sus utulidades
     include Comparable
-    include Enumerable
     # @return [String] nombre del alimento
     # @return [Numeric] proteinas que contiene el alimento
     # @return [Numeric] glúcidos que contiene el alimento
