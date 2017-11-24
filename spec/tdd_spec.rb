@@ -358,7 +358,41 @@ RSpec.describe programacion_funcional do
 end
 
 RSpec.describe benchmark do 
-  
+    before :all do 
+      Huevos lácteos y helados 
+          @grupo11 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
+          @grupo12 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Leche vaca', 3.3, 4.8, 3.2)
+          @grupo13 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Yogurt', 3.8, 4.9, 3.8)
+          #Carnes y derivados
+          @grupo21 = Grupo_de_Alimento.new('Carnes y derivados', 'Cerdo', 21.5, 0.0, 6.3)
+          @grupo22 = Grupo_de_Alimento.new('Carnes y derivados', 'Ternera', 21.1, 0.0, 3.1)
+          @grupo23 = Grupo_de_Alimento.new('Carnes y derivados', 'Pollo', 20.6, 0.0, 5.6)
+          #Pescados y mariscos
+          @grupo31 = Grupo_de_Alimento.new('Pescados y mariscos', 'Bacalao', 17.7, 0.0, 0.4)
+          @grupo32 = Grupo_de_Alimento.new('Pescados y mariscos', 'Atún', 21.5, 0.0, 15.5)
+          @grupo33 = Grupo_de_Alimento.new('Pescados y mariscos', 'Salmón', 19.9, 0.0, 13.6)
+          #Alimentos grasos
+          @grupo41 = Grupo_de_Alimento.new('Alimentos grasos', 'Aceite de oliva', 0.0, 0.2, 99.6)
+          @grupo42 = Grupo_de_Alimento.new('Alimentos grasos', 'Mantequilla', 0.7, 0.0, 83.2)
+          @grupo43 = Grupo_de_Alimento.new('Alimentos grasos', 'Chocolate', 5.3, 47.0, 30.0)
+          #Alimentos ricos en carbohidratos
+          @grupo51 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Azúcar', 0.0, 99.8, 0.0)
+          @grupo52 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Arroz', 6.8, 77.7, 0.6)
+          @grupo53 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Lentejas', 23.5, 52.0, 1.4)
+          @grupo54 = Grupo_de_Alimento.new('Alimentos ricos en carbohidratos', 'Papas', 2.0, 15.4, 0.1)
+          #Verduras y Hortalizas
+          @grupo61 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Tomate', 1.0, 3.5, 0.2)
+          @grupo62 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Cebolla', 1.3, 5.8, 0.3)
+          @grupo63 = Grupo_de_Alimento.new('Verduras y Hortalizas', 'Calabaza', 1.1, 4.8, 0.1)
+          #Frutas
+          @grupo71 = Grupo_de_Alimento.new('Frutas', 'Manzana', 0.3, 12.4, 0.4)
+          @grupo72 = Grupo_de_Alimento.new('Frutas', 'Plátanos', 1.2, 21.4, 0.2)
+          @grupo73 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
+          array = [ @grupo11,@grupo12,@grupo13,@grupo21,@grupo22,@grupo23,@grupo31,@grupo32,@grupo33, @grupo41,@grupo42,
+                    @grupo43,@grupo51,@grupo52,@grupo53,@grupo54,@grupo61,@grupo62,@grupo63,@grupo71,@grupo72,@grupo73]
+    end 
+    
+    
   
   
 end
