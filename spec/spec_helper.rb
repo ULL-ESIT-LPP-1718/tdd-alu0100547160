@@ -1,3 +1,4 @@
+require "coveralls"
 require "bundler/setup"
 require "tdd"
 
@@ -12,3 +13,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+
+
+Coveralls.wear!
