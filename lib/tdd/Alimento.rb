@@ -5,20 +5,21 @@
 class Alimento 
     #Módulo comparable que se incluye para hacer uso de sus utulidades
     include Comparable
+    include Enumerable
     # @return [String] nombre del alimento
     # @return [Numeric] proteinas que contiene el alimento
     # @return [Numeric] glúcidos que contiene el alimento
     # @return [Numeric] grasas que contiene el alimento
-    attr_accessor :nombre, :proteinas, :g, :glucidos, :grasas
+    attr_accessor :nombre, :proteinas, :glucidos, :grasas
     
     # Método para inicializar el objeto
     # @param nombre proteinas glucidos grasas
-    def initialize (nombre, g, proteinas, glucidos, grasas)
+    def initialize (nombre, proteinas, glucidos, grasas)
         @nombre = nombre 
         @proteinas = proteinas
         @glucidos = glucidos
         @grasas = grasas
-        @g = g
+        #@g = g
     end
     # Getter de atributo nombre 
     # @return nombre
@@ -61,14 +62,14 @@ class Alimento
     def <=>(otro)
         self.get_valor_energetico <=> otro.get_valor_energetico
     end 
-    # Método each para poder hacer uso de Enumerable 
-    # def each 
-    #     yield @nombre
-    #     yield @proteinas
-    #     yield @glucidos
-    #     yield @grasas
-    #     yield self.get_valor_energetico
-    # end
+    #Método each para poder hacer uso de Enumerable 
+    def each 
+        yield @nombre
+        yield @proteinas
+        yield @glucidos
+        yield @grasas
+        yield self.get_valor_energetico
+    end
     # Método para calcular el valor enérgetico del ALimento
     # @return ve 
     def get_valor_energetico

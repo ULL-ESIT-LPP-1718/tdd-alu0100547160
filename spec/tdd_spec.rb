@@ -327,7 +327,7 @@ RSpec.describe Enumerable do
     
 end
 
-RSpec.describe programacion_funcional do 
+RSpec.describe Alimento do 
     # before :all do
     # #proteinas, glucidos, grasas
     # @compota_manzana = Alimento.new("Compota de Manzana",[[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
@@ -357,9 +357,9 @@ RSpec.describe programacion_funcional do
   
 end
 
-RSpec.describe benchmark do 
+RSpec.describe Grupo_de_Alimento do 
     before :all do 
-      Huevos lácteos y helados 
+          #Huevos lácteos y helados 
           @grupo11 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
           @grupo12 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Leche vaca', 3.3, 4.8, 3.2)
           @grupo13 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Yogurt', 3.8, 4.9, 3.8)
@@ -388,16 +388,37 @@ RSpec.describe benchmark do
           @grupo71 = Grupo_de_Alimento.new('Frutas', 'Manzana', 0.3, 12.4, 0.4)
           @grupo72 = Grupo_de_Alimento.new('Frutas', 'Plátanos', 1.2, 21.4, 0.2)
           @grupo73 = Grupo_de_Alimento.new('Frutas', 'Pera', 0.5, 12.7, 0.3)
-          array = [ @grupo11,@grupo12,@grupo13,@grupo21,@grupo22,@grupo23,@grupo31,@grupo32,@grupo33, @grupo41,@grupo42,
+          @array = [ @grupo11,@grupo12,@grupo13,@grupo21,@grupo22,@grupo23,@grupo31,@grupo32,@grupo33, @grupo41,@grupo42,
                     @grupo43,@grupo51,@grupo52,@grupo53,@grupo54,@grupo61,@grupo62,@grupo63,@grupo71,@grupo72,@grupo73]
     end 
     
-    
+    context "1)Ordenación de valores energéticos" do
+          it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
+            swapped = true
+            n = @array.size-1
+            j = 0
+            while swapped do
+              swapped = false
+              for i in 0..n-1
+                # @array[i].get_valor_energetico
+                if @array[i].get_valor_energetico > @array[i+1].get_valor_energetico
+                  @array[i], @array[i + 1] = @array[i + 1], @array[i]
+                  swapped = true
+                end
+              end
+            end
+            for i in 0..n
+                puts @array[i].get_valor_energetico.round(2)
+            end
+            
+          end  
+          it "Nuevo array con los elementos ordenados por su valor energético usando el m´etodo each" do
+            @array.each { |i| puts i.get_valor_energetico.round(2)}
+          end
+    end
   
   
 end
-
-
 
 
 
