@@ -358,7 +358,8 @@ RSpec.describe Alimento do
 end
 
 RSpec.describe Grupo_de_Alimento do 
-    before :all do 
+    before :each do 
+          @lista = Lista.new()
           #Huevos lácteos y helados 
           @grupo11 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Huevo frito', 14.1, 0.0, 19.5)
           @grupo12 = Grupo_de_Alimento.new('Huevos, lácteos y helados', 'Leche vaca', 3.3, 4.8, 3.2)
@@ -393,28 +394,34 @@ RSpec.describe Grupo_de_Alimento do
     end 
     
     context "1)Ordenación de valores energéticos" do
-          it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
+        it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
             swapped = true
             n = @array.size-1
-            j = 0
+        
             while swapped do
               swapped = false
               for i in 0..n-1
-                # @array[i].get_valor_energetico
                 if @array[i].get_valor_energetico > @array[i+1].get_valor_energetico
-                  @array[i], @array[i + 1] = @array[i + 1], @array[i]
-                  swapped = true
+                    @array[i], @array[i + 1] = @array[i + 1], @array[i]
+                    swapped = true
                 end
               end
             end
             for i in 0..n
-                puts @array[i].get_valor_energetico.round(2)
+                puts @array[i].get_valor_energetico
             end
             
-          end  
-          it "Nuevo array con los elementos ordenados por su valor energético usando el m´etodo each" do
-            @array.each { |i| puts i.get_valor_energetico.round(2)}
-          end
+        end  
+        it "Nuevo array con los elementos ordenados por su valor energético usando el método each" do
+             
+        end
+        it "Nuevo array con los elementos ordenados por su valor energético usando el método sort" do
+            anur = []
+            @array.each{|i| anur << i.get_valor_energetico}
+            #puts anur
+            runa = [19.8,24.5,31.1,54.4,55.5,61.2,69.0,70.5,74.4,92.2,112.3,132.8,142.7,202.0,225.5,231.9,314.6,343.4,399.2,479.2,751.6,897.2]      
+            expect(anur).to eq([19.8,24.5,31.1,54.4,55.5,61.2,69.0,70.5,74.4,92.2,112.3,132.8,142.7,202.0,225.5,231.9,314.6,343.4,399.2,479.2,751.6,897.2])
+        end  
     end
   
   

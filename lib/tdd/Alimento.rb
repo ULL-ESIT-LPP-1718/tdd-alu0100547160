@@ -45,36 +45,38 @@ class Alimento
     # @return cadena s
     def to_s
         s = ""
-        s << "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
-        
+        #s << "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
+        s << "#{self.get_valor_energetico}"
         s
     end 
     # Restrictivo (con herencia - usa is_a?)
-    def ==(other)
-        if other.is_a?Alimento
-            @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
-        else
-            false
-        end
-    end 
+    # def ==(other)
+    #     if other.is_a?Alimento
+    #         @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
+    #     else
+    #         false
+    #     end
+    # end 
     # Método <=> para Mixin de Comparable 
     # @param otro , recibe otro objeto Alimento para compararse
     def <=>(otro)
-        self.get_valor_energetico <=> otro.get_valor_energetico
+        if other.is_a?Alimento
+            self.get_valor_energetico <=> otro.get_valor_energetico
+        end
     end 
     #Método each para poder hacer uso de Enumerable 
-    def each 
-        yield @nombre
-        yield @proteinas
-        yield @glucidos
-        yield @grasas
-        yield self.get_valor_energetico
-    end
+    # def each 
+    #     yield @nombre
+    #     yield @proteinas
+    #     yield @glucidos
+    #     yield @grasas
+    #     yield self.get_valor_energetico
+    # end
     # Método para calcular el valor enérgetico del ALimento
     # @return ve 
     def get_valor_energetico
         ve = ((@proteinas * 4) + (@glucidos * 4) + (@grasas * 9))
-        ve
+        ve.round(3)
     end 
     # Método para calcular aibc de dos individuos
     # @return suma que es un vector con el sumatorio de los indices 
@@ -116,20 +118,23 @@ class Grupo_de_Alimento < Alimento
     end
     #Encadenamiento (chaining)
     def to_s
-    s = "#{@grupo}    "
-    s << super.to_s  
+    #s = "#{@grupo}    "
+    s = " "
+    s << super.to_s
     end
     #Restrictivo (con herencia - usa is_a?)
-    def ==(other)
-        if other.is_a?Grupo_de_Alimento
-            @grupo == other.grupo && @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
-        else
-            false
-        end
-    end 
+    # def ==(other)
+    #     if other.is_a?Grupo_de_Alimento
+    #         @grupo == other.grupo && @nombre == other.nombre && @proteinas == other.proteinas && @glucidos == other.glucidos && @grasas = other.grasas
+    #     else
+    #         false
+    #     end
+    # end 
     #Definiendo <=> para el Mixin de Comporable 
     def <=>(otro)
-        self.get_valor_energetico <=> otro.get_valor_energetico #&& self.grupo <=> otro.grupo
+        if otro.is_a?Grupo_de_Alimento
+          self.get_valor_energetico <=> otro.get_valor_energetico 
+        end
     end
     #Método para Enumerable
     def each 

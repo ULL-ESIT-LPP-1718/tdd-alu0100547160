@@ -82,7 +82,13 @@ class Lista
                aux = aux.Next_
            end
         end
-        #Metodo de acceso a acada elemento con Enumerable
+        # Método de ordenación de lista
+        def sort_lista
+        #   @lista_ordenada = Lista.new()  
+        #   self.each{|i| @lista_ordenada.insertar_detras(i)}.sort{ |a,b| a <=> b}
+                
+        end
+        # Método de acceso a acada elemento con Enumerable
         def each
             aux = @cabeza
             while(aux != nil)
