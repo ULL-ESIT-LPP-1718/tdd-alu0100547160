@@ -5,7 +5,6 @@
 class Alimento 
     #Módulo comparable que se incluye para hacer uso de sus utulidades
     include Comparable
-    include Enumerable
     # @return [String] nombre del alimento
     # @return [Numeric] proteinas que contiene el alimento
     # @return [Numeric] glúcidos que contiene el alimento
@@ -60,7 +59,7 @@ class Alimento
     # Método <=> para Mixin de Comparable 
     # @param otro , recibe otro objeto Alimento para compararse
     def <=>(otro)
-        if other.is_a?Alimento
+        if otro.is_a?Alimento
             self.get_valor_energetico <=> otro.get_valor_energetico
         end
     end 
@@ -92,7 +91,6 @@ class Alimento
 				end
 			}
 		r << s
-		
 		}
 		suma = []
 		(0..g.size-1).collect { |e|
