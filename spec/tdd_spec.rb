@@ -1,4 +1,6 @@
 require "spec_helper"
+require 'benchmark'
+
 
 
 # RSpec.describe Alimento do
@@ -395,21 +397,24 @@ RSpec.describe Grupo_de_Alimento do
     
     context "1)Ordenación de valores energéticos" do
         it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
-            swapped = true
-            n = @array.size-1
-            while swapped do
-              swapped = false
-              for i in 0..n-1
-                if @array[i].get_valor_energetico > @array[i+1].get_valor_energetico
-                    @array[i], @array[i + 1] = @array[i + 1], @array[i]
-                    swapped = true
+            Benchmark.bm do |x| 
+                x.report("for:"){
+                swapped = true
+                n = @array.size-1
+                while swapped do
+                  swapped = false
+                  for i in 0..n-1
+                    if @array[i].get_valor_energetico > @array[i+1].get_valor_energetico
+                        @array[i], @array[i + 1] = @array[i + 1], @array[i]
+                        swapped = true
+                    end
+                  end
                 end
-              end
+                # for i in 0..n
+                #     puts @array[i].get_valor_energetico
+                # end
+                }
             end
-            for i in 0..n
-                puts @array[i].get_valor_energetico
-            end
-            
         end  
         it "Nuevo array con los elementos ordenados por su valor energético usando el método each" do
                 
