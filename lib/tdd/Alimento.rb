@@ -9,16 +9,16 @@ class Alimento
     # @return [Numeric] proteinas que contiene el alimento
     # @return [Numeric] glúcidos que contiene el alimento
     # @return [Numeric] grasas que contiene el alimento
-    attr_accessor :nombre, :proteinas, :glucidos, :grasas
+    attr_accessor :nombre, :proteinas, :glucidos, :grasas, :g
     
     # Método para inicializar el objeto
     # @param nombre proteinas glucidos grasas
-    def initialize (nombre, proteinas, glucidos, grasas)
+    def initialize (nombre, proteinas, glucidos, grasas, g)
         @nombre = nombre 
         @proteinas = proteinas
         @glucidos = glucidos
         @grasas = grasas
-        #@g = g
+        @g = g
     end
     # Getter de atributo nombre 
     # @return nombre
@@ -110,9 +110,9 @@ class Grupo_de_Alimento < Alimento
     # @return [String] grupo de alimento 
     attr_reader :grupo
     # Método para inicializar el objeto 
-    def initialize(grupo, nombre, proteinas, glucidos, grasas )
+    def initialize(grupo, nombre, proteinas, glucidos, grasas,g )
          @grupo = grupo 
-         super(nombre, proteinas, glucidos, grasas)  #encadenamiento (chaining)
+         super(nombre, proteinas, glucidos, grasas,g)  #encadenamiento (chaining)
     end
     #Encadenamiento (chaining)
     def to_s
