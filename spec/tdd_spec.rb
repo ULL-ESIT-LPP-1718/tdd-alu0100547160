@@ -431,7 +431,7 @@ RSpec.describe Grupo_de_Alimento do
             @lista.to_s  
             expect(@array).to match_array(runa)
         end  
-        it "Comparación de tiempo con Module Benchmark"
+
     end
   
   
