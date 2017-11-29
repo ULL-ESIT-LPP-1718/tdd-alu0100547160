@@ -425,9 +425,9 @@ RSpec.describe Grupo_de_Alimento do
                 m.report("sort:"){
                     runa = []
                     runa = @array.sort {|x,y| x.get_valor_energetico <=> y.get_valor_energetico}
-                        runa.each{|i| @lista.insertar_detras(i)}
+                        #runa.each{|i| @lista.insertar_detras(i)}
                         #@lista.to_s  
-                        expect(@array).to match_array(runa)
+                        #expect(@array).to match_array(runa)
                 }
             end
         end  
