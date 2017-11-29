@@ -12,7 +12,7 @@ class Lista
         def initialize()
             @tam = 0
             @cabeza = nil
-            @cola = nil
+            @cola = nil 
         end 
         # Inserta un nodo por la cabeza de la lista 
         # @param dato [Value]  será el campo value del nodo 
