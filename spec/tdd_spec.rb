@@ -337,7 +337,7 @@ RSpec.describe Alimento do
     @glucosa = Alimento.new("Glucosa",15.0,9.5,8.6,[[4.9,5.3,5.9,6.7,7.2,7.6,8.0,8.2,8.2,8.4,8.3,8.3,8.0,7.5,7.1,6.8,6.8,6.9,6.8,6.3,6.2,6.3,6.2,6.3,6.1],
                                       [6.3,5.4,5.6,5.7,6.5,7.4,7.9,7.4,7.7,7.9,7.9,7.8,7.8,7.8,8.0,8.5,9.4,10.8,10.5,9.1,8.9,8.3,7.7,7.6,7.5]])
     end 
-    context "Aibc Funcional" do 
+    context "1)Aibc Funcional" do 
       it "El alimento debe vector de indices glucémicos" do
         expect(@compota_manzana.g).to eq([[6.7,6.5,6.8,6.9,7.0,7.1,6.9,6.9,6.9,6.7,6.9,7.3,7.0,7.0,7.2,7.1,6.8,7.2,7.3,7.0,6.8,6.7,6.8,6.7,6.9],
                                                           [4.6,4.8,5.3,5.6,6.1,6.5,6.6,7.0,7.0,6.8,6.4,6.3,6.1,6.1,6.2,6.0,6.1,6.1,6.2,6.3,6.4,6.1,6.1,5.7,5.9]]) 
@@ -392,12 +392,13 @@ RSpec.describe Grupo_de_Alimento do
           @grupo73 = Alimento.new('Pera', 0.5, 12.7, 0.3,nil)
           @array = [ @grupo11,@grupo12,@grupo13,@grupo21,@grupo22,@grupo23,@grupo31,@grupo32,@grupo33, @grupo41,@grupo42,
                     @grupo43,@grupo51,@grupo52,@grupo53,@grupo54,@grupo61,@grupo62,@grupo63,@grupo71,@grupo72,@grupo73]
+          @each = @array
     end 
     
-    context "1)Ordenación de valores energéticos" do
+    context "1)Ordenación de valores energéticos iterativa" do
         it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
-            Benchmark.bm do |x| 
-                x.report("for:"){
+            Benchmark.bm do |f| 
+                f.report("for:"){
                 swapped = true
                 n = @array.size-1
                 while swapped do
@@ -411,20 +412,47 @@ RSpec.describe Grupo_de_Alimento do
                 end
                 }
             end
+            puts " Vector ordenado con for"
             for i in 0..@array.size-1
-               puts @array[i].get_valor_energetico
+              puts @array[i].get_valor_energetico
             end
         end  
+    end
+    context "2)Ordenación de valores enérgeticos iterativa/funcional" do
         it "Nuevo array con los elementos ordenados por su valor energético usando el método each" do
+            
+            
+            Benchmark.bm do |e| 
+                @runa = []
+                for i in 0..@array.size-1
+                  @runa << @array[i].get_valor_energetico
+                end
                 
-                
+                e.report("each:"){
+                swapped = true
+                while swapped do
+                    swapped = false
+                    (0..@runa.size-2).each_with_index do  |j|
+                        if  @runa[j] > @runa[j + 1]
+                            @runa[j], @runa[j + 1] = @runa[j + 1], @runa[j]
+                            swapped = true
+                        end
+                    end
+                end
+                }
+                for i in 0..@runa.size-1
+                  puts @runa[i]
+                end
+            end
+            
         end
+    end 
+    context "3)Ordenación de vaores energéticos funcional" do 
         it "Nuevo array con los elementos ordenados por su valor energético usando el método sort" do
             runa = []
-            Benchmark.bm do |m| 
-                m.report("sort:"){
+            Benchmark.bm do |s| 
+                s.report("sort:"){
                     runa = @array.sort {|x,y| x.get_valor_energetico <=> y.get_valor_energetico}
-                        
                 }
             end
             runa.each{|i| @lista.insertar_detras(i)}
