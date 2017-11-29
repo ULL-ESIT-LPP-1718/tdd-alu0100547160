@@ -421,11 +421,15 @@ RSpec.describe Grupo_de_Alimento do
                 
         end
         it "Nuevo array con los elementos ordenados por su valor energético usando el método sort" do
-            runa = []
-            runa = @array.sort {|x,y| x.get_valor_energetico <=> y.get_valor_energetico}
-            runa.each{|i| @lista.insertar_detras(i)}
-            @lista.to_s  
-            expect(@array).to match_array(runa)
+            Benchmark.bm do |m| 
+                m.report("sort:"){
+                    runa = []
+                    runa = @array.sort {|x,y| x.get_valor_energetico <=> y.get_valor_energetico}
+                        runa.each{|i| @lista.insertar_detras(i)}
+                        #@lista.to_s  
+                        expect(@array).to match_array(runa)
+                }
+            end
         end  
     end
   
