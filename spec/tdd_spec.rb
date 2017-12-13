@@ -397,15 +397,16 @@ RSpec.describe Grupo_de_Alimento do
     
     context "1)Ordenación de valores energéticos iterativa" do
         it "Nuevo array con los elementos ordenados por su valor energético usando bucles for" do
+            @each = @array
             Benchmark.bm do |f| 
                 f.report("for:"){
                 swapped = true
-                n = @array.size-1
+                n = @each.size-1
                 while swapped do
                   swapped = false
                   for i in 0..n-1
-                    if @array[i].get_valor_energetico > @array[i+1].get_valor_energetico
-                        @array[i], @array[i + 1] = @array[i + 1], @array[i]
+                    if @each[i].get_valor_energetico > @each[i+1].get_valor_energetico
+                        @each[i], @each[i + 1] = @each[i + 1], @each[i]
                         swapped = true
                     end
                   end
@@ -413,21 +414,18 @@ RSpec.describe Grupo_de_Alimento do
                 }
             end
             puts " Vector ordenado con for"
-            for i in 0..@array.size-1
-              puts @array[i].get_valor_energetico
+            for i in 0..@each.size-1
+              puts @each[i].get_valor_energetico
             end
         end  
     end
     context "2)Ordenación de valores enérgeticos iterativa/funcional" do
         it "Nuevo array con los elementos ordenados por su valor energético usando el método each" do
-            
-            
-            Benchmark.bm do |e| 
-                @runa = []
-                for i in 0..@array.size-1
+            @runa = []
+            for i in 0..@array.size-1
                   @runa << @array[i].get_valor_energetico
-                end
-                
+            end
+            Benchmark.bm do |e| 
                 e.report("each:"){
                 swapped = true
                 while swapped do
@@ -440,10 +438,11 @@ RSpec.describe Grupo_de_Alimento do
                     end
                 end
                 }
-                for i in 0..@runa.size-1
-                  puts @runa[i]
-                end
             end
+            for i in 0..@runa.size-1
+              puts @runa[i]
+            end
+            
             
         end
     end 
@@ -461,6 +460,12 @@ RSpec.describe Grupo_de_Alimento do
         end  
 
     end
+  
+  
+end
+
+RSpec.describe PlatoHarvard do 
+  
   
   
 end
