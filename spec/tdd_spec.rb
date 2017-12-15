@@ -468,13 +468,27 @@ RSpec.describe PlatoHarvard do
   
   before :all do 
   
-    @lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") 
+    lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") do 
+      
+      # vegetal  "Tomate",
+      #         :porcion => "2 piezas pequeñas"
+      fruta    "Plátano",
+              :gramos => 20
+      cereal   "Arroz",
+              :porcion => "1 taza"
+      proteina "Lentejas",
+              :porcion => "1/2 cucharón"
+      proteina "Huevo", 
+              :porcion => "1 pieza"
+      aceite   "Aceite de oliva",
+              :porcion => "1/2 cucharada"
+    end
   end
   
   context "1) Diseño de DSL" do
     it "Debe confirmar que se le pasa un bloque" do
-        expect(@lentejas_arroz).to receive(:nombre) {|&block| expect(block).to be_a(Proc)}
-        
+         expect(PlatoHarvard).to receive(:nombre) {|&block| expect(block).to be_a(Proc)}
+         PlatoHarvard.nombre {}
     end 
     
   end
