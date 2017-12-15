@@ -1,8 +1,8 @@
 class PlatoHarvard 
-    attr_accessor :nombre, :vegetal, :fruta, :cereal, :proteina, :aceite
+  
     def initialize(nombre, &block)
         @nombre = nombre
-       
+        @vegetales = []
         if block_given?  
           if block.arity == 1
             yield self
@@ -10,6 +10,14 @@ class PlatoHarvard
             instance_eval(&block) 
           end
         end
+    end
+    
+    def vegetal(nombre, options = {})
+      vegetal_ =  nombre
+      vegetal_ << " (#{options[:porcion]})" if options[:porcion]
+      vegetal_ << " (#{options[:gramos]})" if options[:gramos]
+      @vegetales << vegetal_
+    
     end
     
 end

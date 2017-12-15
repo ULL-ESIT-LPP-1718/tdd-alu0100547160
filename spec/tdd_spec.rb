@@ -462,7 +462,7 @@ RSpec.describe Grupo_de_Alimento do
     end
   
   
-end
+end 
 
 RSpec.describe PlatoHarvard do 
   
@@ -470,10 +470,10 @@ RSpec.describe PlatoHarvard do
   
     lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") do 
       
-      # vegetal  "Tomate",
-      #         :porcion => "2 piezas pequeñas"
+      vegetal  "Tomate",
+              :porcion => "2 piezas pequeñas"
       fruta    "Plátano",
-              :gramos => 20
+              :gramos => 20 
       cereal   "Arroz",
               :porcion => "1 taza"
       proteina "Lentejas",
