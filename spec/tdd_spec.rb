@@ -481,7 +481,7 @@ RSpec.describe PlatoHarvard do
       proteina "Huevo", 
               :porcion => "1 pieza"
       aceite   "Aceite de oliva",
-              :porcion => "1/2 cucharada"
+              :porcion => "1/2 cucharada" 
     end 
   end
   
