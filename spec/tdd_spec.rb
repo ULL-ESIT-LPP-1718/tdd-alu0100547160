@@ -468,7 +468,7 @@ RSpec.describe PlatoHarvard do
   
   before :all do 
   
-    lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") do 
+    @lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") do 
       
       vegetal  "Tomate",
               :porcion => "2 piezas pequeñas"
@@ -483,13 +483,30 @@ RSpec.describe PlatoHarvard do
       aceite   "Aceite de oliva",
               :porcion => "1/2 cucharada" 
     end 
-  end
+  end 
   
-  context "1) Diseño de DSL" do
+  context "1) DSL" do
     it "Debe confirmar que se le pasa un bloque" do
          expect(PlatoHarvard).to receive(:nombre) {|&block| expect(block).to be_a(Proc)}
          PlatoHarvard.nombre {}
     end 
+    it "Debe exitir metodo fruta" do 
+         expect(@lentejas_arroz).to respond_to(:fruta)
+    end 
+    it "Debe exitir metodo cereal" do 
+         expect(@lentejas_arroz).to respond_to(:cereal)
+    end
+    it "Debe exitir metodo proteina" do 
+         expect(@lentejas_arroz).to respond_to(:proteina)
+    end
+    it "Debe exitir metodo vegetales" do 
+         expect(@lentejas_arroz).to respond_to(:aceite)
+    end
+    
+    it "Debe exitir metodo vegetales" do 
+         expect(PlatoHarvard).to respond_to(:lista_alimentos)
+    end
+    
     
   end
   

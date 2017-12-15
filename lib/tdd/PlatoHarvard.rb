@@ -6,6 +6,8 @@ class PlatoHarvard
         @frutas = []
         @cereales = []
         @proteinas = []
+        @aceites = []
+        
         if block_given?  
           if block.arity == 1
             yield self
@@ -40,6 +42,11 @@ class PlatoHarvard
       @proteinas << proteina_
     end
     
+    def aceite(nombre, options = {})
+      aceite_ =  nombre
+      aceite_ << " (#{options[:porcion]})" if options[:porcion]
+      @aceites << aceite_
+    end
     
 end
 
