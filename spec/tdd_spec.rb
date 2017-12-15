@@ -466,7 +466,18 @@ end
 
 RSpec.describe PlatoHarvard do 
   
+  before :all do 
   
+    @lentejas_arroz = PlatoHarvard.new("Lentejas con arroz, salsa de tomate, huevo y plátano a la plancha") 
+  end
+  
+  context "1) Diseño de DSL" do
+    it "Debe confirmar que se le pasa un bloque" do
+        expect(@lentejas_arroz).to receive(:nombre) {|&block| expect(block).to be_a(Proc)}
+        
+    end 
+    
+  end
   
 end
 
