@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lisseth Vergaray Del Aguila"]
   spec.email         = ["alu0100547160@ull.edu.es"]
 
-  spec.summary       = %q{Practica 10, prueba en los tiempos de métodos each,for,sort con Benchmark}
+  spec.summary       = %q{Practica 12, prueba en los tiempos de métodos each,for,sort con Benchmark}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1718/tdd-alu0100547160.git"
   spec.license       = "MIT"
 
