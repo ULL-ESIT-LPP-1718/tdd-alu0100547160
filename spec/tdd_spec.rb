@@ -482,7 +482,7 @@ RSpec.describe PlatoHarvard do
               :porcion => "1 pieza"
       aceite   "Aceite de oliva",
               :porcion => "1/2 cucharada"
-    end
+    end 
   end
   
   context "1) Diseño de DSL" do

@@ -3,6 +3,7 @@ class PlatoHarvard
     def initialize(nombre, &block)
         @nombre = nombre
         @vegetales = []
+        @frutas = []
         if block_given?  
           if block.arity == 1
             yield self
@@ -15,8 +16,14 @@ class PlatoHarvard
     def vegetal(nombre, options = {})
       vegetal_ =  nombre
       vegetal_ << " (#{options[:porcion]})" if options[:porcion]
-      vegetal_ << " (#{options[:gramos]})" if options[:gramos]
       @vegetales << vegetal_
+    
+    end
+    
+    def fruta(nombre, options = {})
+      fruta_ =  nombre
+      fruta_ << " (#{options[:gramos]})" if options[:gramos]
+      @frutas << fruta_
     
     end
     
