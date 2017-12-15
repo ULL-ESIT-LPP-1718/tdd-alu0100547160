@@ -44,9 +44,10 @@ class Alimento
     # @return cadena s
     def to_s
         s = ""
-        #s << "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
-        s << "#{self.get_valor_energetico}"
-        s
+        # s << "#{@nombre}        #{@proteinas}      #{@glucidos}      #{@grasas}"
+        printf("%18s %10s %10s %10s %10s"," #{@nombre}","#{@proteinas}"," #{@glucidos}","#{@grasas}","#{get_valor_energetico}");
+        
+        # s << "#{self.get_valor_energetico}"
     end 
     # Restrictivo (con herencia - usa is_a?)
     def ==(other)

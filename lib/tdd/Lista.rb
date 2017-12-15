@@ -97,16 +97,30 @@ class Lista
             end
         end
         
+        def find (nombre)
+           aux = @cabeza
+           while(aux != nil)
+               if (nombre == aux.value)
+                    return aux
+               else 
+                    aux = aux.Next_
+               end
+           end
+        end
+        
 end 
 
 
 
 
-#@nodo1 = Nodo.new(5,nil,nil)
+
+@nodo1 = Nodo.new("Platano",nil,nil)
 #@nodo2 = Nodo.new(8,nil,nil)
 # @nodo3 = Nodo.new(9,nil,nil)
-#  @lista = Lista.new()
-# # @lista.insertar_delante(@nodo1)
+  @lista = Lista.new()
+  @lista.insertar_delante(@nodo1)
+  s = @lista.find("Platano")
+  puts s
 #  @lista.insertar_detras(5)
 #  @lista.insertar_detras(8)
 #  @lista.insertar_detras(15)
@@ -122,3 +136,5 @@ end
 # # @lista.to_s
 # # @lista.insertar_delante
 # # @lista.to_s
+
+
